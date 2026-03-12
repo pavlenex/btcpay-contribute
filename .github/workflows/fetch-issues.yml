@@ -23,16 +23,28 @@ jobs:
 
       - name: Fetch issues from GitHub
         id: fetch
-        run: node scripts/fetch-issues.js
+        shell: bash
+        run: |
+          set +e
+          node scripts/fetch-issues.js
+          code=$?
+          if [ $code -eq 0 ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          elif [ $code -eq 1 ]; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Fetch script failed with exit code $code — check logs above"
+            exit $code
+          fi
         env:
           ORG_GITHUB_TOKEN: ${{ secrets.ORG_GITHUB_TOKEN }}
-        continue-on-error: true  # exit code 1 = no changes (not a failure)
 
       - name: Commit and push if data changed
-        if: steps.fetch.outcome == 'success'  # only if exit code 0 (data changed)
+        if: steps.fetch.outputs.changed == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.ORG_GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git add public/data/issues.json
           git commit -m "chore: refresh issues data"
           git push
