@@ -1,0 +1,161 @@
+// @ts-check
+
+/**
+ * Fetches all open "good first issue" issues across the btcpayserver GitHub org.
+ * Writes output to public/data/issues.json.
+ * Exits with code 1 (no-op signal) if data is unchanged — avoids redundant deploys.
+ *
+ * Required env (CI): ORG_GITHUB_TOKEN — PAT with repo:read scope.
+ *   The org has 70+ repos. Fetching all of them requires ~70 API requests, which
+ *   exceeds the unauthenticated rate limit of 60 req/hr. A token is mandatory for
+ *   the cron workflow. Set it as a repo secret named ORG_GITHUB_TOKEN.
+ *
+ * Local dev: run `ORG_GITHUB_TOKEN=ghp_xxx node scripts/fetch-issues.js`
+ *   You can create a token at https://github.com/settings/tokens (no scopes needed
+ *   for public repos — just generate a classic token with no checkboxes ticked).
+ */
+
+import { Octokit } from '@octokit/rest'
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs'
+import { resolve, dirname } from 'path'
+import { fileURLToPath } from 'url'
+import { mapSkills } from './skill-mapper.js'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+const ORG      = 'btcpayserver'
+const LABEL    = 'good first issue'
+const OUT      = resolve(__dirname, '../public/data/issues.json')
+const BODY_MAX = 600
+
+async function main() {
+  const token = process.env.ORG_GITHUB_TOKEN
+  if (!token) {
+    console.error('ORG_GITHUB_TOKEN is required. The org has 70+ repos and will exceed')
+    console.error('the unauthenticated rate limit of 60 req/hr.')
+    console.error('Create a token at https://github.com/settings/tokens (no scopes needed for public repos)')
+    console.error('then run: ORG_GITHUB_TOKEN=ghp_xxx node scripts/fetch-issues.js')
+    process.exit(2)
+  }
+
+  const octokit = new Octokit({ auth: token })
+
+  // ── 1. Fetch all org repos ─────────────────────────────────────────────────
+  console.log(`Fetching repos for org: ${ORG}`)
+  const repos = await octokit.paginate(octokit.rest.repos.listForOrg, {
+    org: ORG,
+    type: 'public',
+    per_page: 100,
+  })
+  console.log(`Found ${repos.length} public repos`)
+
+  // ── 2. Fetch good-first-issues from each repo ──────────────────────────────
+  /** @type {any[]} */
+  const issues = []
+
+  for (const repo of repos) {
+    let page = 1
+    while (true) {
+      const { data } = await octokit.rest.issues.listForRepo({
+        owner: ORG,
+        repo:  repo.name,
+        labels: LABEL,
+        state:  'open',
+        per_page: 100,
+        page,
+      })
+      if (data.length === 0) break
+
+      for (const raw of data) {
+        // Skip pull requests (GitHub returns PRs in issue list)
+        if (raw.pull_request) continue
+
+        const { skills, tags } = mapSkills(
+          { labels: raw.labels.map((l) => (typeof l === 'string' ? { name: l } : l)) },
+          { name: repo.name, language: repo.language },
+        )
+
+        issues.push({
+          id:            raw.id,
+          number:        raw.number,
+          title:         raw.title,
+          body:          (raw.body ?? '').slice(0, BODY_MAX),
+          url:           raw.html_url,
+          createdAt:     raw.created_at,
+          updatedAt:     raw.updated_at ?? raw.created_at,
+          commentsCount: raw.comments,
+          reactionCount: raw.reactions?.total_count ?? 0,
+          labels:        raw.labels
+            .filter((l) => typeof l === 'object')
+            .map((l) => ({ name: l.name ?? '', color: l.color ?? '888888' })),
+          repo: {
+            name:     repo.name,
+            fullName: repo.full_name,
+            language: repo.language ?? null,
+            url:      repo.html_url,
+          },
+          assignees: (raw.assignees ?? []).map((a) => ({
+            login:     a.login,
+            avatarUrl: a.avatar_url,
+            url:       a.html_url,
+          })),
+          author: {
+            login:     raw.user?.login ?? 'unknown',
+            avatarUrl: raw.user?.avatar_url ?? '',
+            url:       raw.user?.html_url ?? '',
+          },
+          skills,
+          tags,
+        })
+      }
+
+      if (data.length < 100) break
+      page++
+    }
+  }
+
+  // ── 3. Sort by creation date desc ─────────────────────────────────────────
+  issues.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+
+  // ── 4. Build repo list ─────────────────────────────────────────────────────
+  const reposWithIssues = repos
+    .filter((r) => issues.some((i) => i.repo.name === r.name))
+    .map((r) => ({
+      id:          r.id,
+      name:        r.name,
+      fullName:    r.full_name,
+      description: r.description ?? null,
+      url:         r.html_url,
+      language:    r.language ?? null,
+      topics:      r.topics ?? [],
+      stars:       r.stargazers_count,
+    }))
+
+  const output = {
+    lastUpdated: new Date().toISOString(),
+    totalIssues: issues.length,
+    repoCount:   reposWithIssues.length,
+    repos:       reposWithIssues,
+    issues,
+  }
+
+  // ── 5. Diff check — skip write if unchanged ────────────────────────────────
+  const json = JSON.stringify(output, null, 2)
+  if (existsSync(OUT)) {
+    const existing = readFileSync(OUT, 'utf8')
+    const strip = (s) => s.replace(/"lastUpdated":\s*"[^"]+"/g, '"lastUpdated":""')
+    if (strip(existing) === strip(json)) {
+      console.log('No changes detected — skipping deploy')
+      process.exit(1) // signals workflow to skip build step
+    }
+  }
+
+  mkdirSync(dirname(OUT), { recursive: true })
+  writeFileSync(OUT, json, 'utf8')
+  console.log(`✓ Wrote ${issues.length} issues from ${reposWithIssues.length} repos to ${OUT}`)
+}
+
+main().catch((err) => {
+  console.error(err)
+  process.exit(2)
+})

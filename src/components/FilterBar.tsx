@@ -1,0 +1,93 @@
+import { Search, X } from 'lucide-react'
+import { useCallback, useRef } from 'react'
+import { cn } from '@/lib/utils'
+import { ALL_SKILLS, SKILL_META } from '@/lib/skill-map'
+import type { FilterState, SkillCategory } from '@/types'
+import { hasActiveFilters } from '@/lib/filter-engine'
+
+interface FilterBarProps {
+  filters:  FilterState
+  setSkill: (s: SkillCategory | null) => void
+  setQuery: (q: string) => void
+  clearAll: () => void
+}
+
+export default function FilterBar({ filters, setSkill, setQuery, clearAll }: FilterBarProps) {
+  const searchRef   = useRef<HTMLInputElement>(null)
+  const debounceRef = useRef<number | undefined>(undefined)
+
+  const handleSearch = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      clearTimeout(debounceRef.current)
+      debounceRef.current = window.setTimeout(() => setQuery(e.target.value), 200)
+    },
+    [setQuery],
+  )
+
+  const active = hasActiveFilters(filters)
+
+  return (
+    <div className="mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+
+        <div className="flex flex-wrap items-center gap-1.5">
+          {ALL_SKILLS.map((skill) => {
+            const meta = SKILL_META[skill]
+            const on   = filters.skill === skill
+            return (
+              <button
+                key={skill}
+                type="button"
+                onClick={() => setSkill(on ? null : skill)}
+                aria-pressed={on}
+                className={cn(
+                  'flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-medium',
+                  'transition-all duration-150 cursor-pointer',
+                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                  on
+                    ? 'bg-primary text-white shadow-sm shadow-primary/20'
+                    : 'bg-muted/70 text-muted-foreground hover:bg-muted hover:text-foreground',
+                )}
+              >
+                <span aria-hidden="true">{meta.icon}</span>
+                {meta.label}
+              </button>
+            )
+          })}
+        </div>
+
+        <div className="flex items-center gap-2 sm:ml-auto">
+          <div className="relative flex-1 sm:flex-none">
+            <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" aria-hidden="true" />
+            <input
+              ref={searchRef}
+              type="search"
+              defaultValue={filters.query}
+              onChange={handleSearch}
+              placeholder="Search issues…"
+              aria-label="Search issues"
+              className={cn(
+                'h-8 pl-8 pr-3 rounded-full text-sm',
+                'bg-muted/70 placeholder:text-muted-foreground',
+                'border border-transparent focus:border-border focus:bg-card',
+                'focus:outline-none transition-all duration-200',
+                'w-full sm:w-40 sm:focus:w-60',
+              )}
+            />
+          </div>
+          {active && (
+            <button
+              type="button"
+              onClick={clearAll}
+              aria-label="Clear all filters"
+              className="flex items-center gap-1 h-8 px-3 rounded-full text-xs bg-muted/70 text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-150 cursor-pointer shrink-0"
+            >
+              <X size={11} aria-hidden="true" /> Clear
+            </button>
+          )}
+        </div>
+
+      </div>
+    </div>
+  )
+}

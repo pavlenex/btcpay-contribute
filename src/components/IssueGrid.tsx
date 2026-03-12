@@ -1,0 +1,68 @@
+import { useEffect, useState } from 'react'
+import { Loader2 } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import IssueCard from '@/components/IssueCard'
+import type { Issue } from '@/types'
+
+const PAGE_SIZE = 20
+
+interface IssueGridProps {
+  issues:      Issue[]
+  loading?:    boolean
+  onIssueClick: (issue: Issue) => void
+}
+
+export default function IssueGrid({ issues, loading, onIssueClick }: IssueGridProps) {
+  const [page, setPage] = useState(1)
+
+  // Reset to page 1 whenever the filtered issue list changes
+  useEffect(() => { setPage(1) }, [issues])
+
+  const visible = issues.slice(0, page * PAGE_SIZE)
+  const hasMore = visible.length < issues.length
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20 text-muted-foreground">
+        <Loader2 size={24} className="animate-spin mr-2" />
+        Loading issues…
+      </div>
+    )
+  }
+
+  if (issues.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-20 text-center">
+        <p className="text-4xl mb-3">🔍</p>
+        <h3 className="font-display font-semibold text-lg">No issues found</h3>
+        <p className="text-muted-foreground text-sm mt-1">
+          Try adjusting your filters or search query.
+        </p>
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {visible.map((issue, i) => (
+          <div key={issue.id} className={`card-enter card-enter-${Math.min(i + 1, 6)}`}>
+            <IssueCard issue={issue} onClick={onIssueClick} />
+          </div>
+        ))}
+      </div>
+
+      {hasMore && (
+        <div className="flex justify-center mt-8">
+          <Button variant="outline" onClick={() => setPage((p) => p + 1)}>
+            Load more ({issues.length - visible.length} remaining)
+          </Button>
+        </div>
+      )}
+
+      <p className="text-center text-xs text-muted-foreground mt-4">
+        Showing {visible.length} of {issues.length} issues
+      </p>
+    </div>
+  )
+}
