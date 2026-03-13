@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-03-12T20:06:01.404Z",
-  "totalIssues": 12,
-  "repoCount": 5,
+  "lastUpdated": "2026-03-13T01:24:35.577Z",
+  "totalIssues": 16,
+  "repoCount": 6,
   "repos": [
     {
       "id": 100711978,
@@ -21,6 +21,16 @@
         "selfhosted"
       ],
       "stars": 7440
+    },
+    {
+      "id": 100714293,
+      "name": "btcpayserver.org",
+      "fullName": "btcpayserver/btcpayserver.org",
+      "description": "BTCPay Server Official Website Repository ",
+      "url": "https://github.com/btcpayserver/btcpayserver.org",
+      "language": "CSS",
+      "topics": [],
+      "stars": 43
     },
     {
       "id": 101657836,
@@ -70,6 +80,146 @@
   ],
   "issues": [
     {
+      "id": 4067414699,
+      "number": 166,
+      "title": "[Feature] Cleanup stale unconfirmed users",
+      "body": "## Description \n\nAdd a cleanup job similar to the existing stale plugin cleanup, but for users who registered and never confirmed their email.\n\nScope:\n- delete only users with `EmailConfirmed = false`\n- only delete users older than a defined threshold\n- never delete users with roles, plugin ownership, reviews, or other linked data\n- run on a schedule, like the current plugin cleanup\n- add tests for delete vs keep scenarios\n\nNote:\nAspNetUsers currently does not seem to store account creation date, so this likely needs a CreatedAt field first to define what is stale safely.",
+      "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/166",
+      "createdAt": "2026-03-12T21:36:42Z",
+      "updatedAt": "2026-03-12T21:37:05Z",
+      "commentsCount": 1,
+      "reactionCount": 1,
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        }
+      ],
+      "repo": {
+        "name": "btcpayserver-plugin-builder",
+        "fullName": "btcpayserver/btcpayserver-plugin-builder",
+        "language": "C#",
+        "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder"
+      },
+      "assignees": [],
+      "author": {
+        "login": "thgO-O",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/107907441?v=4",
+        "url": "https://github.com/thgO-O"
+      },
+      "skills": [
+        "developer"
+      ],
+      "tags": [
+        "C#"
+      ]
+    },
+    {
+      "id": 4066963877,
+      "number": 1557,
+      "title": "Test",
+      "body": "Test",
+      "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1557",
+      "createdAt": "2026-03-12T20:08:41Z",
+      "updatedAt": "2026-03-12T20:08:41Z",
+      "commentsCount": 0,
+      "reactionCount": 0,
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "19b542"
+        }
+      ],
+      "repo": {
+        "name": "btcpayserver-doc",
+        "fullName": "btcpayserver/btcpayserver-doc",
+        "language": "Shell",
+        "url": "https://github.com/btcpayserver/btcpayserver-doc"
+      },
+      "assignees": [],
+      "author": {
+        "login": "pavlenex",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
+        "url": "https://github.com/pavlenex"
+      },
+      "skills": [
+        "writer"
+      ],
+      "tags": [
+        "docs"
+      ]
+    },
+    {
+      "id": 4066956284,
+      "number": 230,
+      "title": "Test",
+      "body": "Test issue",
+      "url": "https://github.com/btcpayserver/btcpayserver.org/issues/230",
+      "createdAt": "2026-03-12T20:07:22Z",
+      "updatedAt": "2026-03-12T20:07:22Z",
+      "commentsCount": 0,
+      "reactionCount": 0,
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "abf993"
+        }
+      ],
+      "repo": {
+        "name": "btcpayserver.org",
+        "fullName": "btcpayserver/btcpayserver.org",
+        "language": "CSS",
+        "url": "https://github.com/btcpayserver/btcpayserver.org"
+      },
+      "assignees": [],
+      "author": {
+        "login": "pavlenex",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
+        "url": "https://github.com/pavlenex"
+      },
+      "skills": [
+        "developer"
+      ],
+      "tags": [
+        "CSS"
+      ]
+    },
+    {
+      "id": 4066954517,
+      "number": 543,
+      "title": "Test Issue",
+      "body": "test",
+      "url": "https://github.com/btcpayserver/directory.btcpayserver.org/issues/543",
+      "createdAt": "2026-03-12T20:07:01Z",
+      "updatedAt": "2026-03-12T20:07:01Z",
+      "commentsCount": 0,
+      "reactionCount": 0,
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        }
+      ],
+      "repo": {
+        "name": "directory.btcpayserver.org",
+        "fullName": "btcpayserver/directory.btcpayserver.org",
+        "language": "TypeScript",
+        "url": "https://github.com/btcpayserver/directory.btcpayserver.org"
+      },
+      "assignees": [],
+      "author": {
+        "login": "pavlenex",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
+        "url": "https://github.com/pavlenex"
+      },
+      "skills": [
+        "developer"
+      ],
+      "tags": [
+        "TypeScript"
+      ]
+    },
+    {
       "id": 4054026700,
       "number": 542,
       "title": "New entry submission - MAGIC Grants",
@@ -115,8 +265,8 @@
       "body": "Plugin Builder currently has no dedicated health check endpoint.\n\nSince startup depends on Postgres, Docker, and Azure Storage, it would be useful to expose a simple probe endpoint for deployments and monitoring.\n\nSuggested scope:\n- add `/health`\n- return `200 OK` when the app is ready to serve requests\n- return `503` when startup is incomplete or a critical dependency is unavailable\n- keep the check lightweight",
       "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/163",
       "createdAt": "2026-03-09T15:44:59Z",
-      "updatedAt": "2026-03-12T17:14:29Z",
-      "commentsCount": 5,
+      "updatedAt": "2026-03-12T22:50:51Z",
+      "commentsCount": 8,
       "reactionCount": 0,
       "labels": [
         {
