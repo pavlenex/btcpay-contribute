@@ -1,4 +1,5 @@
 import { GitBranch, Clock } from 'lucide-react'
+import type React from 'react'
 import { Badge } from '@/components/ui/badge'
 import IssueLabel from '@/components/IssueLabel'
 import type { Issue } from '@/types'
@@ -7,7 +8,7 @@ import { SKILL_META } from '@/lib/skill-map'
 
 interface IssueCardProps {
   issue:   Issue
-  onClick: (issue: Issue) => void
+  onClick: (e: React.MouseEvent, issue: Issue) => void
 }
 
 export default function IssueCard({ issue, onClick }: IssueCardProps) {
@@ -17,7 +18,7 @@ export default function IssueCard({ issue, onClick }: IssueCardProps) {
   return (
     <button
       type="button"
-      onClick={() => onClick(issue)}
+      onClick={(e) => onClick(e, issue)}
       className={cn(
         'glass rounded-2xl text-left w-full h-full flex flex-col p-5 group transition-all duration-300',
         'hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10',

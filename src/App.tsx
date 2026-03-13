@@ -1,4 +1,5 @@
 import { useState, lazy, Suspense } from 'react'
+import type React from 'react'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import FilterBar from '@/components/FilterBar'
@@ -7,6 +8,7 @@ import ResourcesSection from '@/components/ResourcesSection'
 import Footer from '@/components/Footer'
 
 const IssueModal = lazy(() => import('@/components/IssueModal'))
+const preloadIssueModal = () => import('@/components/IssueModal')
 import { useFilters } from '@/hooks/useFilters'
 import { useIssues } from '@/hooks/useIssues'
 import type { Issue } from '@/types'
@@ -15,6 +17,18 @@ export default function App() {
   const { filters, setSkill, setQuery, clearAll } = useFilters()
   const { filtered, status } = useIssues(filters)
   const [selectedIssue, setSelectedIssue] = useState<Issue | null>(null)
+  const [slideFrom, setSlideFrom] = useState<'left' | 'bottom' | 'right'>('bottom')
+
+  const handleIssueClick = (e: React.MouseEvent, issue: Issue) => {
+    const { left, width } = (e.currentTarget as HTMLElement).getBoundingClientRect()
+    const third = window.innerWidth / 3
+    const cardCenter = left + width / 2
+
+    const direction = cardCenter < third ? 'left' : cardCenter > third * 2 ? 'right' : 'bottom'
+
+    setSlideFrom(direction)
+    setSelectedIssue(issue)
+  }
 
   return (
     <>
@@ -44,7 +58,8 @@ export default function App() {
         <IssueGrid
           issues={filtered}
           loading={status === 'loading'}
-          onIssueClick={setSelectedIssue}
+          onIssueClick={handleIssueClick}
+          onIssueHover={preloadIssueModal}
         />
 
         <ResourcesSection />
@@ -52,9 +67,10 @@ export default function App() {
 
       <Footer />
 
-      <Suspense fallback={null}>
+      <Suspense fallback={<div className="fixed inset-0 z-50 bg-black/30" />}>
         <IssueModal
           issue={selectedIssue}
+          slideFrom={slideFrom}
           onClose={() => setSelectedIssue(null)}
         />
       </Suspense>

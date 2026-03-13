@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import type React from 'react'
 import { Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import IssueCard from '@/components/IssueCard'
@@ -7,12 +8,13 @@ import type { Issue } from '@/types'
 const PAGE_SIZE = 20
 
 interface IssueGridProps {
-  issues:      Issue[]
-  loading?:    boolean
-  onIssueClick: (issue: Issue) => void
+  issues:       Issue[]
+  loading?:     boolean
+  onIssueClick: (e: React.MouseEvent, issue: Issue) => void
+  onIssueHover: () => void
 }
 
-export default function IssueGrid({ issues, loading, onIssueClick }: IssueGridProps) {
+export default function IssueGrid({ issues, loading, onIssueClick, onIssueHover }: IssueGridProps) {
   const [page, setPage] = useState(1)
 
   // Reset to page 1 whenever the filtered issue list changes
@@ -46,9 +48,9 @@ export default function IssueGrid({ issues, loading, onIssueClick }: IssueGridPr
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {visible.map((issue, i) => (
-          <div key={issue.id} className={`card-enter card-enter-${Math.min(i + 1, 6)}`}>
-            <IssueCard issue={issue} onClick={onIssueClick} />
-          </div>
+          <div key={issue.id} className={`card-enter card-enter-${Math.min(i + 1, 6)}`} onMouseEnter={onIssueHover}>
+              <IssueCard issue={issue} onClick={onIssueClick} />
+            </div>
         ))}
       </div>
 
