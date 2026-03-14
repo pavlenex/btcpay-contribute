@@ -48,7 +48,7 @@ export default function App() {
 
         <div>
           <div
-            className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-xl border-b border-border/40"
+            className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-xl"
             style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6">

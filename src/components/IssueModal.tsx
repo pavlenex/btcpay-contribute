@@ -19,7 +19,7 @@ export default function IssueModal({ issue, onClose, slideFrom }: IssueModalProp
   return (
     <Dialog open={!!issue} onOpenChange={(open) => { if (!open) onClose() }}>
       {issue && (
-        <DialogContent slideFrom={slideFrom} className="max-h-[90vh] flex flex-col overflow-hidden">
+        <DialogContent slideFrom={slideFrom} className="flex flex-col overflow-hidden">
 
           <div className="flex items-center gap-2 text-muted-foreground text-xs pr-8">
             <GitBranch size={12} aria-hidden="true" />

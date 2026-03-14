@@ -50,6 +50,7 @@ export function DialogContent({
         'glass rounded-2xl shadow-2xl p-6',
         'data-[state=open]:animate-in data-[state=closed]:animate-out',
         'duration-300',
+        'max-h-[90vh] max-sm:max-h-[calc(100dvh-4rem)] max-sm:w-[calc(100%-2rem)]',
         ...slideClasses[slideFrom],
         className,
       )}

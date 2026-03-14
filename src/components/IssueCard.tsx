@@ -3,7 +3,7 @@ import type React from 'react'
 import { Badge } from '@/components/ui/badge'
 import IssueLabel from '@/components/IssueLabel'
 import type { Issue } from '@/types'
-import { cn, timeAgo } from '@/lib/utils'
+import { cn, timeAgo, stripMarkdown } from '@/lib/utils'
 import { SKILL_META } from '@/lib/skill-map'
 
 interface IssueCardProps {
@@ -42,8 +42,8 @@ export default function IssueCard({ issue, onClick }: IssueCardProps) {
       </h3>
 
       {issue.body && (
-        <p className="text-muted-foreground text-sm leading-relaxed mt-2 line-clamp-2">
-          {issue.body}
+        <p className="text-muted-foreground text-sm leading-relaxed mt-2 line-clamp-2 overflow-hidden break-words min-w-0">
+          {stripMarkdown(issue.body)}
         </p>
       )}
 
@@ -55,7 +55,7 @@ export default function IssueCard({ issue, onClick }: IssueCardProps) {
         </div>
       )}
 
-      <div className="flex items-center gap-3 mt-auto text-muted-foreground text-xs">
+      <div className="flex items-center gap-3 mt-auto pt-2 text-muted-foreground text-xs">
         <span className="flex items-center gap-1 ml-auto">
           <Clock size={11} aria-hidden="true" /> {timeAgo(issue.createdAt)}
         </span>

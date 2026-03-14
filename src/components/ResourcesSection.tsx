@@ -177,7 +177,7 @@ function DevToolRows() {
       <ToolRow
         href="https://dotnet.microsoft.com/download/dotnet/10.0"
         icon={<Terminal size={15} className="text-foreground" />}
-        label=".NET 8.0 SDK"
+        label=".NET 10.0 SDK"
       />
       <ToolRow
         href="https://www.docker.com/get-started/"
@@ -194,14 +194,6 @@ function DevToolRows() {
         label="Read the docs"
         meta={<InlineLinks links={[{ href: 'https://desktop.github.com', label: 'Dev Docs' }, { href: 'https://www.sourcetreeapp.com', label: 'Playlist' }]} />}
       />
-      {/* <ToolRow
-        icon={<BookOpen size={15} className="text-foreground" />}
-        label={<span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Read the docs</span>}
-        meta={<InlineLinks links={[
-          { href: 'https://docs.btcpayserver.org/Development/LocalDevelopment/', label: 'Dev Docs' },
-          { href: 'https://www.youtube.com/watch?v=GWR_CcMsEV0&list=PLrIppt9ulOJ3fuAhsYkbubN_vI0nhvDUC', label: 'Playlist' },
-        ]} />}
-      /> */}
     </div>
   )
 }
