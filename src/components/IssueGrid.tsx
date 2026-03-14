@@ -17,7 +17,6 @@ interface IssueGridProps {
 export default function IssueGrid({ issues, loading, onIssueClick, onIssueHover }: IssueGridProps) {
   const [page, setPage] = useState(1)
 
-  // Reset to page 1 whenever the filtered issue list changes
   useEffect(() => { setPage(1) }, [issues])
 
   const visible = issues.slice(0, page * PAGE_SIZE)

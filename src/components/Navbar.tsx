@@ -23,8 +23,6 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/40 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center gap-6">
-
-        {/* Logo — same mark as directory.btcpayserver.org, "Contribute" label */}
         <a
           href="/"
           aria-label="BTCPay Contribute home"

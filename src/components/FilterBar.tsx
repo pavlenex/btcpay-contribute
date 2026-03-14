@@ -27,8 +27,6 @@ export default function FilterBar({ filters, setSkill, setQuery, clearAll }: Fil
   return (
     <div className="min-w-0 overflow-hidden">
       <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-
-        {/* Filtres à gauche */}
         <div className="flex flex-wrap items-center gap-1.5 min-w-0">
           {ALL_SKILLS.map((skill) => {
             const meta = SKILL_META[skill]
