@@ -25,10 +25,11 @@ export default function FilterBar({ filters, setSkill, setQuery, clearAll }: Fil
   const active = hasActiveFilters(filters)
 
   return (
-    <div>
+    <div className="min-w-0 overflow-hidden">
       <div className="flex flex-col sm:flex-row sm:items-center gap-2">
 
-        <div className="flex flex-wrap items-center gap-1.5">
+        {/* Filtres à gauche */}
+        <div className="flex flex-wrap items-center gap-1.5 min-w-0">
           {ALL_SKILLS.map((skill) => {
             const meta = SKILL_META[skill]
             const on   = filters.skill === skill
@@ -54,8 +55,29 @@ export default function FilterBar({ filters, setSkill, setQuery, clearAll }: Fil
           })}
         </div>
 
-        <div className="flex items-center gap-2 sm:ml-auto">
-          <div className="relative flex-1 sm:flex-none">
+        {/* Clear + Search à droite */}
+        <div className="flex items-center gap-2 sm:ml-auto w-full sm:w-auto min-w-0">
+          {active && (
+            <button
+              type="button"
+              onClick={clearAll}
+              aria-label="Clear all filters"
+              className={cn(
+                'flex items-center justify-center rounded-full shrink-0',
+                'bg-muted/70 text-muted-foreground hover:text-foreground hover:bg-muted',
+                'transition-all duration-150 cursor-pointer',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                // Mobile : icône seule, cercle compact
+                'h-8 w-8',
+                // Desktop : icône + texte, pill avec padding
+                'sm:w-auto sm:px-3 sm:gap-1.5 sm:text-sm sm:font-medium',
+              )}
+            >
+              <X size={14} aria-hidden="true" />
+              <span className="hidden sm:inline">Clear</span>
+            </button>
+          )}
+          <div className="relative flex-1 sm:flex-none min-w-0">
             <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" aria-hidden="true" />
             <input
               ref={searchRef}
@@ -73,16 +95,6 @@ export default function FilterBar({ filters, setSkill, setQuery, clearAll }: Fil
               )}
             />
           </div>
-          {active && (
-            <button
-              type="button"
-              onClick={clearAll}
-              aria-label="Clear all filters"
-              className="flex items-center gap-1 h-8 px-3 rounded-full text-xs bg-muted/70 text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-150 cursor-pointer shrink-0"
-            >
-              <X size={11} aria-hidden="true" /> Clear
-            </button>
-          )}
         </div>
 
       </div>
