@@ -47,13 +47,18 @@ export default function App() {
         </div>
 
         <div>
-          <div className="sticky top-14 z-50 py-3 -mx-4 sm:-mx-6 px-4 sm:px-6 bg-background/85 backdrop-blur-xl">
-            <FilterBar
-              filters={filters}
-              setSkill={setSkill}
-              setQuery={setQuery}
-              clearAll={clearAll}
-            />
+          <div
+            className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-xl border-b border-border/40"
+            style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}
+          >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <FilterBar
+                filters={filters}
+                setSkill={setSkill}
+                setQuery={setQuery}
+                clearAll={clearAll}
+              />
+            </div>
           </div>
 
           <IssueGrid

@@ -55,7 +55,7 @@ export default function IssueCard({ issue, onClick }: IssueCardProps) {
         </div>
       )}
 
-      <div className="flex items-center gap-3 mt-3 text-muted-foreground text-xs">
+      <div className="flex items-center gap-3 mt-auto text-muted-foreground text-xs">
         <span className="flex items-center gap-1 ml-auto">
           <Clock size={11} aria-hidden="true" /> {timeAgo(issue.createdAt)}
         </span>

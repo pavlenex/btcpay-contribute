@@ -25,7 +25,7 @@ export default function FilterBar({ filters, setSkill, setQuery, clearAll }: Fil
   const active = hasActiveFilters(filters)
 
   return (
-    <div className="mb-4">
+    <div>
       <div className="flex flex-col sm:flex-row sm:items-center gap-2">
 
         <div className="flex flex-wrap items-center gap-1.5">
