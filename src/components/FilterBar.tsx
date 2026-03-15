@@ -13,13 +13,11 @@ interface FilterBarProps {
 }
 
 export default function FilterBar({ filters, setSkill, setQuery, clearAll }: FilterBarProps) {
-  const searchRef   = useRef<HTMLInputElement>(null)
-  const debounceRef = useRef<number | undefined>(undefined)
+  const searchRef = useRef<HTMLInputElement>(null)
 
   const handleSearch = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      clearTimeout(debounceRef.current)
-      debounceRef.current = window.setTimeout(() => setQuery(e.target.value), 200)
+      setQuery(e.target.value)
     },
     [setQuery],
   )
@@ -27,10 +25,9 @@ export default function FilterBar({ filters, setSkill, setQuery, clearAll }: Fil
   const active = hasActiveFilters(filters)
 
   return (
-    <div className="mb-4">
-      <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-
-        <div className="flex flex-wrap items-center gap-1.5">
+    <div className="min-w-0 overflow-hidden">
+      <div className="flex flex-col md:flex-row md:items-center gap-2">
+        <div className="flex flex-wrap items-center gap-1.5 min-w-0">
           {ALL_SKILLS.map((skill) => {
             const meta = SKILL_META[skill]
             const on   = filters.skill === skill
@@ -56,13 +53,31 @@ export default function FilterBar({ filters, setSkill, setQuery, clearAll }: Fil
           })}
         </div>
 
-        <div className="flex items-center gap-2 sm:ml-auto">
-          <div className="relative flex-1 sm:flex-none">
+        <div className="flex items-center gap-2 md:ml-auto w-full md:w-auto">
+          {active && (
+            <button
+              type="button"
+              onClick={clearAll}
+              aria-label="Clear all filters"
+              className={cn(
+                'flex items-center justify-center rounded-full shrink-0',
+                'bg-muted/70 text-muted-foreground hover:text-foreground hover:bg-muted',
+                'transition-all duration-150 cursor-pointer',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                'h-8 w-8',
+                'md:w-auto md:px-3 md:gap-1.5 md:text-sm md:font-medium',
+              )}
+            >
+              <X size={14} aria-hidden="true" />
+              <span className="hidden sm:inline">Clear</span>
+            </button>
+          )}
+          <div className="relative flex-1 md:flex-none min-w-0">
             <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" aria-hidden="true" />
             <input
               ref={searchRef}
               type="search"
-              defaultValue={filters.query}
+              value={filters.query}
               onChange={handleSearch}
               placeholder="Search issues…"
               aria-label="Search issues"
@@ -71,22 +86,12 @@ export default function FilterBar({ filters, setSkill, setQuery, clearAll }: Fil
                 'bg-muted/70 placeholder:text-muted-foreground',
                 'border border-transparent focus:border-border focus:bg-card',
                 'focus:outline-none transition-all duration-200',
-                'w-full sm:w-40 sm:focus:w-60',
+                'w-full md:w-40 md:focus:w-60',
+                'text-base md:text-sm',
               )}
             />
           </div>
-          {active && (
-            <button
-              type="button"
-              onClick={clearAll}
-              aria-label="Clear all filters"
-              className="flex items-center gap-1 h-8 px-3 rounded-full text-xs bg-muted/70 text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-150 cursor-pointer shrink-0"
-            >
-              <X size={11} aria-hidden="true" /> Clear
-            </button>
-          )}
         </div>
-
       </div>
     </div>
   )

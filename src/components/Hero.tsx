@@ -1,7 +1,7 @@
 
 export default function Hero() {
   return (
-    <section aria-label="Overview" className="relative py-16 sm:py-24">
+    <section aria-label="Overview" className="py-16 sm:py-24">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 50% 0%, hsl(var(--primary) / 0.08) 0%, transparent 60%)' }}

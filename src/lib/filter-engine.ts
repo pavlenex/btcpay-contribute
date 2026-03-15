@@ -6,7 +6,7 @@ const ALLOWED_SKILLS = new Set<string>(ALL_SKILLS)
 /** Loose input accepted by sanitizeFilters — raw strings from URL params before validation. */
 interface RawFilterInput {
   skill?: string | null
-  tags?:  string[]
+  tags?: string[]
   repos?: string[]
   query?: string
 }
@@ -21,7 +21,7 @@ export function sanitizeFilters(raw: RawFilterInput): FilterState {
   }
 }
 
-/** Apply all active filters to the full issue list. Pure function — no side effects. */
+/** Apply all active filters to the full issue list */
 export function filterIssues(issues: Issue[], filters: FilterState): Issue[] {
   let result = issues.filter((i) => i.assignees.length === 0)
 

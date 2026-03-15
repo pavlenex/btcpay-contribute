@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import type React from 'react'
 import { Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import IssueCard from '@/components/IssueCard'
@@ -7,15 +8,15 @@ import type { Issue } from '@/types'
 const PAGE_SIZE = 20
 
 interface IssueGridProps {
-  issues:      Issue[]
-  loading?:    boolean
-  onIssueClick: (issue: Issue) => void
+  issues:       Issue[]
+  loading?:     boolean
+  onIssueClick: (e: React.MouseEvent, issue: Issue) => void
+  onIssueHover: () => void
 }
 
-export default function IssueGrid({ issues, loading, onIssueClick }: IssueGridProps) {
+export default function IssueGrid({ issues, loading, onIssueClick, onIssueHover }: IssueGridProps) {
   const [page, setPage] = useState(1)
 
-  // Reset to page 1 whenever the filtered issue list changes
   useEffect(() => { setPage(1) }, [issues])
 
   const visible = issues.slice(0, page * PAGE_SIZE)
@@ -32,7 +33,7 @@ export default function IssueGrid({ issues, loading, onIssueClick }: IssueGridPr
 
   if (issues.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-20 text-center">
+      <div id="issues" className="flex flex-col items-center justify-center py-20 text-center">
         <p className="text-4xl mb-3">🔍</p>
         <h3 className="font-display font-semibold text-lg">No issues found</h3>
         <p className="text-muted-foreground text-sm mt-1">
@@ -43,12 +44,12 @@ export default function IssueGrid({ issues, loading, onIssueClick }: IssueGridPr
   }
 
   return (
-    <div>
+    <div id="issues" className="mt-4 mb-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {visible.map((issue, i) => (
-          <div key={issue.id} className={`card-enter card-enter-${Math.min(i + 1, 6)}`}>
-            <IssueCard issue={issue} onClick={onIssueClick} />
-          </div>
+          <div key={issue.id} className={`card-enter card-enter-${Math.min(i + 1, 6)}`} onMouseEnter={onIssueHover}>
+              <IssueCard issue={issue} onClick={onIssueClick} />
+            </div>
         ))}
       </div>
 
