@@ -31,6 +31,7 @@ export function useFilters() {
 
   const setSkill = useCallback((skill: SkillCategory | null) => {
     setFilters((prev) => ({ ...prev, skill, tags: [] })) // reset tags on skill change
+    document.getElementById('issues')?.scrollIntoView({ behavior: 'smooth' })
   }, [])
 
   const setQuery = useCallback((query: string) => {

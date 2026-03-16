@@ -191,11 +191,8 @@ function DevToolRows() {
       />
       <ToolRow
         icon={<BookOpen size={15} className="text-foreground" />}
-        label={<span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Optional</span>}
-        meta={<InlineLinks links={[
-          { href: 'https://docs.btcpayserver.org/Development/LocalDevelopment/', label: 'Dev Docs' },
-          { href: 'https://www.youtube.com/watch?v=GWR_CcMsEV0&list=PLrIppt9ulOJ3fuAhsYkbubN_vI0nhvDUC', label: 'Playlist' },
-        ]} />}
+        label="Read the docs"
+        meta={<InlineLinks links={[{ href: 'https://desktop.github.com', label: 'Dev Docs' }, { href: 'https://www.sourcetreeapp.com', label: 'Playlist' }]} />}
       />
     </div>
   )

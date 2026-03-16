@@ -1,5 +1,6 @@
+import { lazy, Suspense } from 'react'
 import { ExternalLink, MessageCircle, Clock, GitBranch } from 'lucide-react'
-import ReactMarkdown from 'react-markdown'
+const ReactMarkdown = lazy(() => import('react-markdown'))
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -9,15 +10,16 @@ import { timeAgo } from '@/lib/utils'
 import { SKILL_META } from '@/lib/skill-map'
 
 interface IssueModalProps {
-  issue:   Issue | null
+  issue: Issue | null
   onClose: () => void
+  slideFrom: 'left' | 'bottom' | 'right'
 }
 
-export default function IssueModal({ issue, onClose }: IssueModalProps) {
+export default function IssueModal({ issue, onClose, slideFrom }: IssueModalProps) {
   return (
     <Dialog open={!!issue} onOpenChange={(open) => { if (!open) onClose() }}>
       {issue && (
-        <DialogContent className="max-h-[90vh] flex flex-col overflow-hidden">
+        <DialogContent slideFrom={slideFrom} className="flex flex-col overflow-hidden">
 
           <div className="flex items-center gap-2 text-muted-foreground text-xs pr-8">
             <GitBranch size={12} aria-hidden="true" />
@@ -38,7 +40,7 @@ export default function IssueModal({ issue, onClose }: IssueModalProps) {
           </DialogTitle>
 
           {issue.labels.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 mt-2">
+            <div className="flex flex-wrap gap-1.5 mt-2 mb-2">
               {issue.labels.map((label) => (
                 <IssueLabel key={label.name} label={label} />
               ))}
@@ -69,20 +71,22 @@ export default function IssueModal({ issue, onClose }: IssueModalProps) {
             </span>
           </div>
 
-          <div className="flex-1 overflow-y-auto mt-4 pr-1 min-h-0">
+          <div className="flex-1 overflow-y-auto mt-4 mb-4 pr-1 min-h-0">
             <div className="prose prose-sm max-w-none dark:prose-invert text-foreground">
-              <ReactMarkdown
-                skipHtml
-                allowedElements={['p', 'h1', 'h2', 'h3', 'ul', 'ol', 'li', 'code', 'pre', 'blockquote', 'a', 'strong', 'em', 'br']}
-                unwrapDisallowed
-              >
-                {issue.body || '_No description provided._'}
-              </ReactMarkdown>
+              <Suspense fallback={<p className="text-muted-foreground text-sm whitespace-pre-wrap">{issue.body || '_No description provided._'}</p>}>
+                <ReactMarkdown
+                  skipHtml
+                  allowedElements={['p', 'h1', 'h2', 'h3', 'ul', 'ol', 'li', 'code', 'pre', 'blockquote', 'a', 'strong', 'em', 'br']}
+                  unwrapDisallowed
+                >
+                  {issue.body || '_No description provided._'}
+                </ReactMarkdown>
+              </Suspense>
             </div>
           </div>
 
           {issue.skills.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border">
+            <div className="flex flex-wrap gap-1.5 pt-4 pb-4 border-t border-border">
               {issue.skills.map((s) => {
                 const meta = SKILL_META[s]
                 return (
@@ -99,7 +103,7 @@ export default function IssueModal({ issue, onClose }: IssueModalProps) {
             </div>
           )}
 
-          <div className="mt-4 pt-4 border-t border-border">
+          <div className="pt-4 border-t border-border">
             <Button size="lg" className="w-full" asChild>
               <a href={issue.url} target="_blank" rel="noopener noreferrer">
                 Open Issue on GitHub
