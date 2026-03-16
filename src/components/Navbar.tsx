@@ -92,7 +92,7 @@ export default function Navbar({ selectedRole, onRoleSelect }: NavbarProps) {
         </nav>
 
         <div className="flex items-center gap-1.5 ml-auto">
-          <div ref={ref} className="relative hidden sm:block">
+          <div ref={ref} className="relative block">
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -113,7 +113,8 @@ export default function Navbar({ selectedRole, onRoleSelect }: NavbarProps) {
               <div
                 role="listbox"
                 aria-label="Select role"
-                className="absolute right-0 top-full mt-1.5 w-40 rounded-xl border border-border/60 bg-background/95 backdrop-blur-xl shadow-lg overflow-hidden"
+                className="absolute right-0 top-full mt-1.5 w-40 rounded-xl border border-border/60 bg-background/95 backdrop-blur-xl shadow-lg overflow-hidden
+                sm:left-auto left-1/2 -translate-x-1/2 sm:translate-x-0"
               >
                 {ROLES.map((role) => (
                   <button
