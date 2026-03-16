@@ -13,16 +13,7 @@ export function filterIssues(issues: Issue[], filters: FilterState): Issue[] {
     )
   }
 
-  return result
-}
-
-export function filterByQuery(items: Issue[], query: string): Issue[] {
-  if (!query.trim()) return items
-  const q = query.trim().toLowerCase()
-  return items.filter(
-    (i) =>
-      i.title.toLowerCase().includes(q) ||
-      i.body.toLowerCase().includes(q) ||
-      i.repo.name.toLowerCase().includes(q),
+  return result.sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
   )
 }
