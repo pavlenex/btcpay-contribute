@@ -82,7 +82,7 @@ export default function App() {
             </div>
 
             <div>
-              <div className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-xl">
+              <div className="sticky top-16 z-40 py-4 bg-background -mx-8 sm:-mx-12 px-8 sm:px-12">
                 <div className="max-w-7xl mx-auto px-0">
                   <FilterBar
                     filters={filters}

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { IssuesData, FilterState } from '@/types'
-import { filterIssues, filterByQuery } from '@/lib/filter-engine'
+import { filterIssues } from '@/lib/filter-engine'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -34,8 +34,8 @@ export function useIssues(filters: FilterState) {
   )
 
   const testerFiltered = useMemo(
-    () => (data ? filterByQuery(data.testerItems ?? [], filters.query) : []),
-    [data, filters.query],
+    () => (data ? filterIssues(data.testerItems ?? [], filters) : []),
+    [data, filters],
   )
 
   const writerFiltered = useMemo(

@@ -106,8 +106,7 @@
   }
 
   input[type="search"]::-webkit-search-cancel-button {
-    cursor: pointer;
-    filter: invert(30%);  
+    display: none  
   }
 }
 

@@ -8,8 +8,8 @@ import type { Issue } from '@/types'
 const PAGE_SIZE = 20
 
 interface IssueGridProps {
-  issues:       Issue[]
-  loading?:     boolean
+  issues: Issue[]
+  loading?: boolean
   onIssueClick: (e: React.MouseEvent, issue: Issue) => void
   onIssueHover: () => void
 }
