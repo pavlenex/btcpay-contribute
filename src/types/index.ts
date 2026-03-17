@@ -1,4 +1,4 @@
-export type Role = 'developer' | 'tester' | 'writer'
+export type Role = 'developer' | 'tester' | 'writer' | 'ambassador'
 
 export interface Repository {
   id: number

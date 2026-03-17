@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import type React from 'react'
 import ThemeToggle from '@/components/ThemeToggle'
-import { Code2, FlaskConical, PenLine, ChevronDown } from 'lucide-react'
+import { Code2, FlaskConical, PenLine, Globe, ChevronDown } from 'lucide-react'
 import type { Role } from '@/types'
 
 /** BTCPay logo mark - paths extracted from directory.btcpayserver.org logo SVG */
@@ -23,18 +23,20 @@ function BTCPayMark({ className }: { className?: string }) {
   )
 }
 
-const ROLES: Role[] = ['developer', 'tester', 'writer']
+const ROLES: Role[] = ['developer', 'tester', 'writer', 'ambassador']
 
 const ROLE_ICON: Record<Role, React.ReactElement> = {
   developer: <Code2 size={13} />,
   tester: <FlaskConical size={13} />,
   writer: <PenLine size={13} />,
+  ambassador: <Globe size={13} />,
 }
 
 const ROLE_LABEL: Record<Role, string> = {
   developer: 'Developer',
   tester: 'Tester',
   writer: 'Writer',
+  ambassador: 'Ambassador',
 }
 
 interface NavbarProps {

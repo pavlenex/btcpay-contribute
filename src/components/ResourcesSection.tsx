@@ -90,7 +90,6 @@ function YoutubeThumbnail({ video, priority = false }: { video: VideoMeta; prior
         fetchPriority={priority ? 'high' : 'low'}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" aria-hidden="true" />
       <div className="absolute inset-0 flex items-center justify-center">
         <div
           className="w-16 h-16 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
@@ -98,10 +97,6 @@ function YoutubeThumbnail({ video, priority = false }: { video: VideoMeta; prior
         >
           <Play size={20} fill="white" className="ml-1" aria-hidden="true" />
         </div>
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 p-5">
-        <p className="text-white/60 text-xs font-medium">{video.meta}</p>
-        <p className="text-white font-semibold text-sm mt-0.5 leading-snug">{video.title}</p>
       </div>
     </button>
   )
@@ -127,6 +122,48 @@ const WRITER_VIDEO: VideoMeta = {
   meta: 'Writing guide',
   title: 'How to contribute to BTCPay Server docs',
   ariaLabel: 'How to contribute to BTCPay Server documentation',
+}
+
+const AMBASSADOR_INTRO_VIDEO: VideoMeta = {
+  id: '9n81qnzlPf8',
+  meta: 'Community story',
+  title: 'BTCPay Server in the wild',
+  ariaLabel: 'BTCPay Server community ambassador story',
+}
+
+const AMBASSADOR_VIDEO_1: VideoMeta = {
+  id: 'WqyNp7W1TEQ',
+  meta: 'BTCPay Server · Bitcoin 2024',
+  title: 'The Year of Ambassadors',
+  ariaLabel: 'BTCPay Server - The Year of Ambassadors at Bitcoin 2024',
+}
+
+const AMBASSADOR_VIDEO_2: VideoMeta = {
+  id: 'PJSVJkOHTR0',
+  meta: 'BTCPay Server · Ambassadors',
+  title: 'Become a BTCPay Server Ambassador',
+  ariaLabel: 'Become a BTCPay Server Ambassador',
+}
+
+const DEPLOY_VIDEO_1: VideoMeta = {
+  id: '4boOmhAB3bo',
+  meta: 'Deployment guide',
+  title: 'BTCPay Server deployment walkthrough',
+  ariaLabel: 'BTCPay Server deployment walkthrough',
+}
+
+const DEPLOY_VIDEO_2: VideoMeta = {
+  id: 'p5dFwvsLE1w',
+  meta: 'Deployment guide',
+  title: 'BTCPay Server setup tutorial',
+  ariaLabel: 'BTCPay Server setup tutorial',
+}
+
+const MONETIZATION_VIDEO: VideoMeta = {
+  id: 'THxH6jRrtgQ',
+  meta: 'Monetization guide',
+  title: 'Enable subscriptions and monetization',
+  ariaLabel: 'How to enable subscriptions and monetization in BTCPay Server',
 }
 
 
@@ -238,6 +275,47 @@ function DevStep4() {
   )
 }
 
+function AmbassadorStep2Videos() {
+  return (
+    <div className="flex flex-col gap-3">
+      <YoutubeThumbnail video={AMBASSADOR_VIDEO_1} />
+      <YoutubeThumbnail video={AMBASSADOR_VIDEO_2} />
+    </div>
+  )
+}
+
+function AmbassadorStep3Videos() {
+  return (
+    <div className="flex flex-col gap-3">
+      <YoutubeThumbnail video={DEPLOY_VIDEO_1} />
+      <YoutubeThumbnail video={DEPLOY_VIDEO_2} />
+    </div>
+  )
+}
+
+function AmbassadorStep4() {
+  return (
+    <div className="flex flex-col gap-4">
+      <YoutubeThumbnail video={MONETIZATION_VIDEO} />
+      <div className="flex flex-col gap-1.5">
+        <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">Docs</p>
+        <ToolRow href="https://docs.btcpayserver.org/Subscriptions/" icon={<BookOpen size={15} className="text-foreground" />} label="Subscriptions" />
+        <ToolRow href="https://docs.btcpayserver.org/Monetization/" icon={<BookOpen size={15} className="text-foreground" />} label="Monetization" />
+      </div>
+    </div>
+  )
+}
+
+function AmbassadorStep5() {
+  return (
+    <div className="flex flex-col gap-1.5">
+      <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">Get visible</p>
+      <ToolRow href="https://directory.btcpayserver.org" icon={<MessageSquare size={15} className="text-foreground" />} label="List yourself in the BTCPay host directory" />
+      <ToolRow href="https://x.com/btcpayserver" icon={<XIcon className="w-4 h-4 text-foreground" />} label={<>Tweet it out and tag <span className="text-primary">@BTCPayServer</span></>} />
+    </div>
+  )
+}
+
 // ── Step data ────────────────────────────────────────────────────────────────
 
 interface StepDef {
@@ -252,7 +330,7 @@ const STEPS: Record<Role, StepDef[]> = {
     {
       label: 'Documentary',
       title: 'Watch the documentary',
-      description: 'Understand the mission and meet the contributors who built BTCPay Server. A 42-minute film that shows why this project matters.',
+      description: 'Understand the mission and meet the contributors who built BTCPay Server. A 42-minute film about the story behind the project and its mission.',
     },
     {
       label: 'Dev Setup',
@@ -262,7 +340,7 @@ const STEPS: Record<Role, StepDef[]> = {
     {
       label: 'Community',
       title: 'Join the community',
-      description: 'Introduce yourself, ask questions, and connect with contributors who have shipped real features.',
+      description: 'Introduce yourself, ask questions, and connect with contributors who started exactly where you are.',
     },
     {
       label: 'Ship It',
@@ -275,7 +353,7 @@ const STEPS: Record<Role, StepDef[]> = {
     {
       label: 'Documentary',
       title: 'Watch the documentary',
-      description: 'Understand the mission and meet the contributors who built BTCPay Server. A 42-minute film that shows why this project matters.',
+      description: 'Understand the mission and meet the contributors who built BTCPay Server. A 42-minute film about the story behind the project and its mission.',
     },
     {
       label: 'Dev Setup',
@@ -298,7 +376,7 @@ const STEPS: Record<Role, StepDef[]> = {
     {
       label: 'Documentary',
       title: 'Watch the documentary',
-      description: 'Understand the mission and meet the contributors who built BTCPay Server. A 42-minute film that shows why this project matters.',
+      description: 'Understand the mission and meet the contributors who built BTCPay Server. A 42-minute film about the story behind the project and its mission.',
     },
     {
       label: 'Set up',
@@ -308,7 +386,7 @@ const STEPS: Record<Role, StepDef[]> = {
     {
       label: 'Community',
       title: 'Join the community',
-      description: 'Introduce yourself, ask questions, and connect with contributors who have shipped real features.',
+      description: 'Introduce yourself, ask questions, and connect with contributors who started exactly where you are.',
     },
     {
       label: 'Write',
@@ -317,27 +395,67 @@ const STEPS: Record<Role, StepDef[]> = {
       cta: { href: '#issues', label: 'Pick an issue' },
     },
   ],
+  ambassador: [
+    {
+      label: 'Watch',
+      title: 'Paint the world orange',
+      description: 'Start local. Every merchant you onboard brings Bitcoin closer to everyday life. Your city, your street, your community.',
+    },
+    {
+      label: 'Get Inspired',
+      title: 'Get inspired by success stories',
+      description: 'Real communities are already running on BTCPay Server. Read how they did it.',
+    },
+    {
+      label: 'Deploy',
+      title: 'Deploy BTCPay Server',
+      description: 'Pick a hosting option and get BTCPay Server running for your community.',
+    },
+    {
+      label: 'Monetize',
+      title: 'Monetize your hosting',
+      description: 'Offer subscriptions and paid tiers to cover costs and keep your node running long term.',
+    },
+    {
+      label: 'Spread the Word',
+      title: 'Promote to your community',
+      description: 'List yourself as a BTCPay host so your community can find you, then announce it on X.',
+    },
+  ],
 }
 
 // ── Step visual resolver ─────────────────────────────────────────────────────
 
 function StepVisual({ role, stepIndex }: { role: Role; stepIndex: number }) {
-  // Step 1 (index 0): always documentary
-  if (stepIndex === 0) return <YoutubeThumbnail video={DOC_VIDEO} priority />
+  // Step 1 (index 0): ambassador gets its own intro video; all others get the documentary
+  if (stepIndex === 0) {
+    if (role === 'ambassador') return <YoutubeThumbnail video={AMBASSADOR_INTRO_VIDEO} priority />
+    return <YoutubeThumbnail video={DOC_VIDEO} priority />
+  }
 
-  // Step 2 (index 1): dev/tester = dev env setup; writer = writing guide video
+  // Step 2 (index 1): role-specific
   if (stepIndex === 1) {
     if (role === 'developer' || role === 'tester') return <YoutubeThumbnail video={DEV_VIDEO} />
     if (role === 'writer') return <YoutubeThumbnail video={WRITER_VIDEO} />
+    if (role === 'ambassador') return <AmbassadorStep2Videos />
   }
 
-  // Step 3 (index 2): same for all roles
-  if (stepIndex === 2) return <CommunityRows />
+  // Step 3 (index 2): community for most; deploy resources for ambassador
+  if (stepIndex === 2) {
+    if (role === 'ambassador') return <AmbassadorStep3Videos />
+    return <CommunityRows />
+  }
 
   // Step 4 (index 3)
-  if (role === 'developer') return <DevStep4 />
-  if (role === 'tester') return <TesterStep4 />
-  if (role === 'writer') return <WriterStep4 />
+  if (stepIndex === 3) {
+    if (role === 'developer') return <DevStep4 />
+    if (role === 'tester') return <TesterStep4 />
+    if (role === 'writer') return <WriterStep4 />
+    if (role === 'ambassador') return <AmbassadorStep4 />
+  }
+
+  // Step 5 (index 4) — ambassador only
+  if (stepIndex === 4 && role === 'ambassador') return <AmbassadorStep5 />
 
   return null
 }
@@ -350,6 +468,10 @@ function StepRow({ step, index, role }: { step: StepDef; index: number; role: Ro
 
   // Step 2 for dev/tester gets the wide two-column layout with video + tools side by side
   const isDevSetupStep = index === 1 && (role === 'developer' || role === 'tester')
+  // Step 2 for ambassador: text + case studies on left, videos on right
+  const isAmbassadorInspireStep = index === 1 && role === 'ambassador'
+  // Step 3 for ambassador: text + docs link on left, videos on right
+  const isAmbassadorDeployStep = index === 2 && role === 'ambassador'
 
   if (isDevSetupStep) {
     return (
@@ -382,6 +504,81 @@ function StepRow({ step, index, role }: { step: StepDef; index: number; role: Ro
           <YoutubeThumbnail video={DEV_VIDEO} />
           <DevToolRows />
         </div>
+      </div>
+    )
+  }
+
+  if (isAmbassadorInspireStep) {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 py-14 sm:py-20 items-start transition-all duration-700 ease-out',
+          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+        )}
+      >
+        <div className="space-y-1 lg:order-2">
+          <span
+            className="font-display font-bold leading-none select-none block text-foreground/[0.055]"
+            style={{ fontSize: 'clamp(5rem, 12vw, 9rem)' }}
+            aria-hidden="true"
+          >
+            02
+          </span>
+          <div className="-mt-3 sm:-mt-5 space-y-3">
+            <h3 className="font-display font-bold text-2xl sm:text-3xl text-foreground leading-tight">
+              {step.title}
+            </h3>
+            {step.description && (
+              <p className="text-muted-foreground leading-relaxed max-w-sm">{step.description}</p>
+            )}
+          </div>
+          <div className="flex flex-col gap-1.5 pt-4">
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">Case Studies</p>
+            <ToolRow href="https://blog.btcpayserver.org/case-study-bitcoin-jungle-cr/" icon={<BookOpen size={15} className="text-foreground" />} label="🇨🇷 Bitcoin Jungle" />
+            <ToolRow href="https://blog.btcpayserver.org/case-study-bitcoin-people/" icon={<BookOpen size={15} className="text-foreground" />} label="🇮🇹 Bitcoin People" />
+            <ToolRow href="https://blog.btcpayserver.org/case-study-bitcoin-atlantis/" icon={<BookOpen size={15} className="text-foreground" />} label="🇵🇹 Bitcoin Atlantis" />
+            <ToolRow href="https://blog.btcpayserver.org/case-study-hodlhodl-2023/" icon={<BookOpen size={15} className="text-foreground" />} label="🇱🇻 HodlHodl" />
+          </div>
+        </div>
+        <div className="lg:order-1">
+          <AmbassadorStep2Videos />
+        </div>
+      </div>
+    )
+  }
+
+  if (isAmbassadorDeployStep) {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 py-14 sm:py-20 items-start transition-all duration-700 ease-out',
+          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+        )}
+      >
+        <div className="space-y-1">
+          <span
+            className="font-display font-bold leading-none select-none block text-foreground/[0.055]"
+            style={{ fontSize: 'clamp(5rem, 12vw, 9rem)' }}
+            aria-hidden="true"
+          >
+            03
+          </span>
+          <div className="-mt-3 sm:-mt-5 space-y-3">
+            <h3 className="font-display font-bold text-2xl sm:text-3xl text-foreground leading-tight">
+              {step.title}
+            </h3>
+            {step.description && (
+              <p className="text-muted-foreground leading-relaxed max-w-sm">{step.description}</p>
+            )}
+          </div>
+          <div className="flex flex-col gap-1.5 pt-4">
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">Docs</p>
+            <ToolRow href="https://docs.btcpayserver.org/Deployment/" icon={<BookOpen size={15} className="text-foreground" />} label="Deployment Guide" />
+          </div>
+        </div>
+        <AmbassadorStep3Videos />
       </div>
     )
   }
@@ -431,10 +628,18 @@ function StepRow({ step, index, role }: { step: StepDef; index: number; role: Ro
 
 // ── Section subtitles per role ───────────────────────────────────────────────
 
+const SECTION_HEADING: Record<Role, string> = {
+  developer: 'New here? Learn step by step',
+  tester: 'New here? Learn step by step',
+  writer: 'New here? Learn step by step',
+  ambassador: 'Ready to bring Bitcoin payments to your community?',
+}
+
 const SECTION_SUB: Record<Role, string> = {
   developer: 'New to open source? Follow these steps to land your first merged PR.',
   tester: 'New to testing? Follow these steps to file your first quality report.',
   writer: 'New to contributing docs or content? Follow these steps to get your first PR merged.',
+  ambassador: '',
 }
 
 // ── Export ───────────────────────────────────────────────────────────────────
@@ -449,11 +654,13 @@ export default function ResourcesSection({ role }: { role: Role }) {
           How it works
         </p>
         <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground">
-          New here? Learn step by step
+          {SECTION_HEADING[role]}
         </h2>
-        <p className="mt-4 text-muted-foreground max-w-sm mx-auto text-sm sm:text-base">
-          {SECTION_SUB[role]}
-        </p>
+        {SECTION_SUB[role] && (
+          <p className="mt-4 text-muted-foreground max-w-sm mx-auto text-sm sm:text-base">
+            {SECTION_SUB[role]}
+          </p>
+        )}
       </div>
 
       <div className="divide-y divide-border/60">

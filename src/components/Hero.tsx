@@ -1,5 +1,5 @@
 import type React from 'react'
-import { Code2, FlaskConical, PenLine } from 'lucide-react'
+import { Code2, FlaskConical, PenLine, Globe } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { Role } from '@/types'
 
@@ -15,19 +15,25 @@ const ROLES: RoleMeta[] = [
     id: 'developer',
     icon: <Code2 size={28} />,
     label: 'Developer',
-    description: 'Write code, fix bugs, ship features in C#, TypeScript, and more.',
+    description: 'Fix bugs, build features, get your code merged.',
   },
   {
     id: 'tester',
     icon: <FlaskConical size={28} />,
     label: 'Tester',
-    description: 'Test pull requests, hunt bugs, and give quality feedback.',
+    description: 'Hunt bugs, test PRs, and file clear reports.',
   },
   {
     id: 'writer',
     icon: <PenLine size={28} />,
     label: 'Writer',
-    description: 'Improve docs, write blog posts, and help users understand BTCPay Server.',
+    description: 'Write docs and guides that help users understand BTCPay.',
+  },
+  {
+    id: 'ambassador',
+    icon: <Globe size={28} />,
+    label: 'Ambassador',
+    description: 'Host BTCPay Server and onboard your local community to Bitcoin.',
   },
 ]
 
@@ -59,7 +65,7 @@ export default function Hero({ selectedRole, onRoleSelect }: HeroProps) {
       </div>
 
       {/* Role selector */}
-      <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-4xl mx-auto">
+      <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 max-w-5xl mx-auto">
         {ROLES.map((role) => {
           const selected = selectedRole === role.id
           return (

@@ -14,7 +14,7 @@ import { useFilters } from '@/hooks/useFilters'
 import { useIssues } from '@/hooks/useIssues'
 import type { Issue, Role } from '@/types'
 
-const ROLE_SECTION_TITLE: Record<Role, { heading: string; sub: string }> = {
+const ROLE_SECTION_TITLE: Record<Exclude<Role, 'ambassador'>, { heading: string; sub: string }> = {
   developer: {
     heading: 'Jump right in',
     sub: 'Pick a good first issue and start shipping.',
@@ -51,7 +51,8 @@ export default function App() {
     setSelectedIssue(issue)
   }
 
-  const { heading, sub } = ROLE_SECTION_TITLE[selectedRole]
+  const isAmbassador = selectedRole === 'ambassador'
+  const sectionTitle = isAmbassador ? null : ROLE_SECTION_TITLE[selectedRole as Exclude<Role, 'ambassador'>]
   const issues =
     selectedRole === 'tester'
       ? testerFiltered
@@ -69,33 +70,37 @@ export default function App() {
           onRoleSelect={handleRoleSelect}
         />
 
-        <div id="issues" className="border-t border-border/60 pt-20 sm:pt-28 pb-10 text-center">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground">
-            {heading}
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-sm mx-auto text-sm sm:text-base">
-            {sub}
-          </p>
-        </div>
+        {!isAmbassador && sectionTitle && (
+          <>
+            <div id="issues" className="border-t border-border/60 pt-20 sm:pt-28 pb-10 text-center">
+              <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground">
+                {sectionTitle.heading}
+              </h2>
+              <p className="mt-4 text-muted-foreground max-w-sm mx-auto text-sm sm:text-base">
+                {sectionTitle.sub}
+              </p>
+            </div>
 
-        <div>
-          <div className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-xl">
-            <div className="max-w-7xl mx-auto px-0">
-              <FilterBar
-                filters={filters}
-                setQuery={setQuery}
+            <div>
+              <div className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-xl">
+                <div className="max-w-7xl mx-auto px-0">
+                  <FilterBar
+                    filters={filters}
+                    setQuery={setQuery}
+                  />
+                </div>
+              </div>
+
+              <IssueGrid
+                key={`${selectedRole}:${filters.query}`}
+                issues={issues}
+                loading={status === 'loading'}
+                onIssueClick={handleIssueClick}
+                onIssueHover={preloadIssueModal}
               />
             </div>
-          </div>
-
-          <IssueGrid
-            key={`${selectedRole}:${filters.query}`}
-            issues={issues}
-            loading={status === 'loading'}
-            onIssueClick={handleIssueClick}
-            onIssueHover={preloadIssueModal}
-          />
-        </div>
+          </>
+        )}
 
         <ResourcesSection role={selectedRole} />
       </main>
