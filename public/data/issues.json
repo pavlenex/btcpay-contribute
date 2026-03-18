@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-18T12:55:48.257Z",
-  "totalIssues": 20,
+  "lastUpdated": "2026-03-18T18:52:07.097Z",
+  "totalIssues": 17,
   "repoCount": 6,
   "repos": [
     {
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7451
+      "stars": 7452
     },
     {
       "id": 101657836,
@@ -118,66 +118,6 @@
       "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1563",
       "createdAt": "2026-03-18T11:40:02Z",
       "updatedAt": "2026-03-18T11:40:02Z",
-      "commentsCount": 0,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "19b542"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver-doc",
-        "fullName": "btcpayserver/btcpayserver-doc",
-        "language": "Shell",
-        "url": "https://github.com/btcpayserver/btcpayserver-doc"
-      },
-      "assignees": [],
-      "author": {
-        "login": "pavlenex",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
-        "url": "https://github.com/pavlenex"
-      }
-    },
-    {
-      "id": 4094456835,
-      "number": 1561,
-      "type": "issue",
-      "title": "Register account page contains create a store steps",
-      "body": "The current documentation around account registration and store creation needs cleanup.\nRight now, https://docs.btcpayserver.org/RegisterAccount/ includes steps for creating a store, while https://docs.btcpayserver.org/CreateStore/ covers the same topic with less detail.\nA good refactor would take one of these two approaches:\n\n1. Combine “Register Account” and “Create a Store” into a single page if it makes more sense as one continuous onboarding step.\n2. Keep them as separate pages, but make each page focus only on its own step, with a clear link or prompt at the end guiding the user to the n",
-      "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1561",
-      "createdAt": "2026-03-18T11:21:31Z",
-      "updatedAt": "2026-03-18T11:21:31Z",
-      "commentsCount": 0,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "19b542"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver-doc",
-        "fullName": "btcpayserver/btcpayserver-doc",
-        "language": "Shell",
-        "url": "https://github.com/btcpayserver/btcpayserver-doc"
-      },
-      "assignees": [],
-      "author": {
-        "login": "pavlenex",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
-        "url": "https://github.com/pavlenex"
-      }
-    },
-    {
-      "id": 4094421272,
-      "number": 1560,
-      "type": "issue",
-      "title": "Update outdated link to third party hosts on `Register Account page`",
-      "body": "<img width=\"719\" height=\"306\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/2365f2c5-18e2-4fb9-924e-f8391fd8d841\" />\n\nLink here https://docs.btcpayserver.org/RegisterAccount/  for third party hosts leads to https://directory.btcpayserver.org/filter/hosts instead of https://directory.btcpayserver.org/#type=Hosted+BTCPay\n\nThis is pretty trivial issue to tackle, feel free to comment below if you want to work on it.\n",
-      "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1560",
-      "createdAt": "2026-03-18T11:14:31Z",
-      "updatedAt": "2026-03-18T11:14:31Z",
       "commentsCount": 0,
       "reactionCount": 0,
       "labels": [
@@ -482,46 +422,6 @@
       }
     },
     {
-      "id": 3820273373,
-      "number": 7109,
-      "type": "issue",
-      "title": "[Feature]: Improve label system to work when we have 10+ labels",
-      "body": "Now that we are integrating the label system into Payment Requests as well (https://github.com/btcpayserver/btcpayserver/pull/7050), we should improve label UX so it scales to 10, 100, or 1,000 labels.\n\nThe current wallet UI that dumps all labels into the filter dropdown will not scale:\n\nhttps://github.com/user-attachments/assets/a9de89de-b877-472e-a776-921a46da87c9\n\nFrom the video, it is clear the labels filter dropdown should never exceed page height. A good approach would be to reuse the dropdown we already use in transaction rows for applying labels:\n\n<img width=\"453\" height=\"275\" alt=\"Ima",
-      "url": "https://github.com/btcpayserver/btcpayserver/issues/7109",
-      "createdAt": "2026-01-16T04:21:31Z",
-      "updatedAt": "2026-03-11T16:21:09Z",
-      "commentsCount": 8,
-      "reactionCount": 2,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "3de570"
-        },
-        {
-          "name": "Label",
-          "color": "4566a6"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver",
-        "fullName": "btcpayserver/btcpayserver",
-        "language": "C#",
-        "url": "https://github.com/btcpayserver/btcpayserver"
-      },
-      "assignees": [
-        {
-          "login": "rockstardev",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/5191402?v=4",
-          "url": "https://github.com/rockstardev"
-        }
-      ],
-      "author": {
-        "login": "rockstardev",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/5191402?v=4",
-        "url": "https://github.com/rockstardev"
-      }
-    },
-    {
       "id": 3799539831,
       "number": 7092,
       "type": "issue",
@@ -749,8 +649,8 @@
       "body": "closes #7246 \r\n\r\n\r\nhttps://github.com/user-attachments/assets/fdda35d0-e20e-4aed-b575-535868b2547b\r\n\r\n\r\n",
       "url": "https://github.com/btcpayserver/btcpayserver/pull/7247",
       "createdAt": "2026-03-17T09:31:07Z",
-      "updatedAt": "2026-03-17T10:16:12Z",
-      "commentsCount": 1,
+      "updatedAt": "2026-03-18T16:18:01Z",
+      "commentsCount": 3,
       "reactionCount": 1,
       "labels": [
         {
@@ -972,66 +872,6 @@
       "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1563",
       "createdAt": "2026-03-18T11:40:02Z",
       "updatedAt": "2026-03-18T11:40:02Z",
-      "commentsCount": 0,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "19b542"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver-doc",
-        "fullName": "btcpayserver/btcpayserver-doc",
-        "language": "Shell",
-        "url": "https://github.com/btcpayserver/btcpayserver-doc"
-      },
-      "assignees": [],
-      "author": {
-        "login": "pavlenex",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
-        "url": "https://github.com/pavlenex"
-      }
-    },
-    {
-      "id": 4094456835,
-      "number": 1561,
-      "type": "issue",
-      "title": "Register account page contains create a store steps",
-      "body": "The current documentation around account registration and store creation needs cleanup.\nRight now, https://docs.btcpayserver.org/RegisterAccount/ includes steps for creating a store, while https://docs.btcpayserver.org/CreateStore/ covers the same topic with less detail.\nA good refactor would take one of these two approaches:\n\n1. Combine “Register Account” and “Create a Store” into a single page if it makes more sense as one continuous onboarding step.\n2. Keep them as separate pages, but make each page focus only on its own step, with a clear link or prompt at the end guiding the user to the n",
-      "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1561",
-      "createdAt": "2026-03-18T11:21:31Z",
-      "updatedAt": "2026-03-18T11:21:31Z",
-      "commentsCount": 0,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "19b542"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver-doc",
-        "fullName": "btcpayserver/btcpayserver-doc",
-        "language": "Shell",
-        "url": "https://github.com/btcpayserver/btcpayserver-doc"
-      },
-      "assignees": [],
-      "author": {
-        "login": "pavlenex",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
-        "url": "https://github.com/pavlenex"
-      }
-    },
-    {
-      "id": 4094421272,
-      "number": 1560,
-      "type": "issue",
-      "title": "Update outdated link to third party hosts on `Register Account page`",
-      "body": "<img width=\"719\" height=\"306\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/2365f2c5-18e2-4fb9-924e-f8391fd8d841\" />\n\nLink here https://docs.btcpayserver.org/RegisterAccount/  for third party hosts leads to https://directory.btcpayserver.org/filter/hosts instead of https://directory.btcpayserver.org/#type=Hosted+BTCPay\n\nThis is pretty trivial issue to tackle, feel free to comment below if you want to work on it.\n",
-      "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1560",
-      "createdAt": "2026-03-18T11:14:31Z",
-      "updatedAt": "2026-03-18T11:14:31Z",
       "commentsCount": 0,
       "reactionCount": 0,
       "labels": [
