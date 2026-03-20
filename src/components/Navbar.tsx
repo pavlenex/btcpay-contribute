@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import type React from 'react'
 import ThemeToggle from '@/components/ThemeToggle'
-import { Code2, FlaskConical, PenLine, Globe, ChevronDown } from 'lucide-react'
+import { Code2, FlaskConical, PenLine, Globe, ChevronDown, Menu, X } from 'lucide-react'
 import type { Role } from '@/types'
 
 /** BTCPay logo mark - paths extracted from directory.btcpayserver.org logo SVG */
@@ -47,6 +47,8 @@ interface NavbarProps {
 export default function Navbar({ selectedRole, onRoleSelect }: NavbarProps) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!open) return
@@ -58,6 +60,17 @@ export default function Navbar({ selectedRole, onRoleSelect }: NavbarProps) {
     document.addEventListener('mousedown', handleClick)
     return () => document.removeEventListener('mousedown', handleClick)
   }, [open])
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    function handleClick(e: MouseEvent) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target as Node)) {
+        setMobileMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [mobileMenuOpen])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/40 transition-all duration-300">
@@ -91,6 +104,44 @@ export default function Navbar({ selectedRole, onRoleSelect }: NavbarProps) {
           >
             How it works
           </a>
+        </nav>
+
+        <nav ref={mobileMenuRef} className="flex sm:hidden items-center relative">
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((v) => !v)}
+            aria-haspopup="menu"
+            aria-expanded={mobileMenuOpen}
+            aria-label="Open navigation menu"
+            className="flex items-center justify-center w-8 h-8 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+
+          {mobileMenuOpen && (
+            <div
+              role="menu"
+              aria-label="Navigation menu"
+              className="absolute left-0 top-full mt-1.5 w-48 rounded-xl border border-border/60 bg-background/95 backdrop-blur-xl shadow-lg overflow-hidden"
+            >
+              <a
+                href="#issues"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block w-full px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors duration-100"
+                role="menuitem"
+              >
+                Contribute
+              </a>
+              <a
+                href="#how-it-works"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block w-full px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors duration-100"
+                role="menuitem"
+              >
+                How it works
+              </a>
+            </div>
+          )}
         </nav>
 
         <div className="flex items-center gap-1.5 ml-auto">
