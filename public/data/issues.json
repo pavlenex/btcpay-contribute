@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-20T18:38:13.488Z",
+  "lastUpdated": "2026-03-21T01:20:31.326Z",
   "totalIssues": 15,
   "repoCount": 6,
   "repos": [
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7452
+      "stars": 7453
     },
     {
       "id": 101657836,
@@ -92,8 +92,8 @@
       "body": "According to the [user testing report ](https://github.com/btcpayserver/btcpay-contribute/issues/4#issuecomment-4099311361)by @JohnOluB \n\n\nOn viewports below 640px, the two main nav links \"Contribute\" and \"How it Works\" are hidden with no hamburger menu to access them. Only the logo, a role dropdown, a GitHub icon, and a light/dark icon remain visible.\nTested at: 350px, 400px, 480px, 520px, 560px — all affected.\nBoth links reappear at 640px and above.\n\nSolution is to add hamburger menu for mobile devices and put all relevant menu items in there.\n\nGood first issue, if anyone is interested in ta",
       "url": "https://github.com/btcpayserver/btcpay-contribute/issues/8",
       "createdAt": "2026-03-20T17:22:34Z",
-      "updatedAt": "2026-03-20T17:22:34Z",
-      "commentsCount": 0,
+      "updatedAt": "2026-03-20T21:41:01Z",
+      "commentsCount": 1,
       "reactionCount": 0,
       "labels": [
         {
