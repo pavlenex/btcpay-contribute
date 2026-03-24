@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-03-24T01:23:41.389Z",
-  "totalIssues": 14,
-  "repoCount": 6,
+  "lastUpdated": "2026-03-24T12:56:37.699Z",
+  "totalIssues": 13,
+  "repoCount": 5,
   "repos": [
     {
       "id": 100711978,
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7456
+      "stars": 7457
     },
     {
       "id": 101657836,
@@ -66,54 +66,9 @@
       "language": "HTML",
       "topics": [],
       "stars": 23
-    },
-    {
-      "id": 1179862494,
-      "name": "btcpay-contribute",
-      "fullName": "btcpayserver/btcpay-contribute",
-      "description": "Website that guides new contributors to contribute to Bitcoin and BTCPay Server",
-      "url": "https://github.com/btcpayserver/btcpay-contribute",
-      "language": "TypeScript",
-      "topics": [
-        "bitcoin",
-        "contribute",
-        "contributions-welcome",
-        "open-source"
-      ],
-      "stars": 3
     }
   ],
   "issues": [
-    {
-      "id": 4109099281,
-      "number": 8,
-      "type": "issue",
-      "title": "\"Contribute\" and \"How it Works\" nav links disappear on screens narrower than 640px",
-      "body": "According to the [user testing report ](https://github.com/btcpayserver/btcpay-contribute/issues/4#issuecomment-4099311361)by @JohnOluB \n\n\nOn viewports below 640px, the two main nav links \"Contribute\" and \"How it Works\" are hidden with no hamburger menu to access them. Only the logo, a role dropdown, a GitHub icon, and a light/dark icon remain visible.\nTested at: 350px, 400px, 480px, 520px, 560px — all affected.\nBoth links reappear at 640px and above.\n\nSolution is to add hamburger menu for mobile devices and put all relevant menu items in there.\n\nGood first issue, if anyone is interested in ta",
-      "url": "https://github.com/btcpayserver/btcpay-contribute/issues/8",
-      "createdAt": "2026-03-20T17:22:34Z",
-      "updatedAt": "2026-03-20T21:41:01Z",
-      "commentsCount": 1,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        }
-      ],
-      "repo": {
-        "name": "btcpay-contribute",
-        "fullName": "btcpayserver/btcpay-contribute",
-        "language": "TypeScript",
-        "url": "https://github.com/btcpayserver/btcpay-contribute"
-      },
-      "assignees": [],
-      "author": {
-        "login": "pavlenex",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
-        "url": "https://github.com/pavlenex"
-      }
-    },
     {
       "id": 4096797025,
       "number": 549,
@@ -370,8 +325,8 @@
       "body": "**Context:**\nAs mentioned in [Issue #3954](https://github.com/btcpayserver/btcpayserver/issues/3954), there is a need to standardize the Wallet view so that it offers feature parity with other views in BTCPay Server.\n\n<img width=\"2297\" height=\"262\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/2e36b1fd-c0ec-42dc-b64f-48f0eabf8ed3\" />\n\n\n**Request:**\nEnhance the Wallet transaction view to allow users to filter transactions by date in the same way as the Payment Requests and Invoices views. This would help users more easily locate relevant transactions and improve consistency across",
       "url": "https://github.com/btcpayserver/btcpayserver/issues/7092",
       "createdAt": "2026-01-10T11:16:33Z",
-      "updatedAt": "2026-02-14T16:29:31Z",
-      "commentsCount": 2,
+      "updatedAt": "2026-03-24T08:05:42Z",
+      "commentsCount": 3,
       "reactionCount": 0,
       "labels": [
         {
@@ -578,8 +533,8 @@
       "body": "## Summary\r\nAdds invoice‑style search and date filtering to the wallet transactions view, so users can quickly locate transactions by TXID or time range. The UI mirrors the invoice/payment request patterns and filters apply consistently to infinite scroll and exports.\r\n\r\n## Problem\r\nPer #7091 and #7092 (and #3954), wallet transactions lacked:\r\n- A search bar for transaction IDs (and related metadata)\r\n- Date filtering controls consistent with invoices/payment requests\r\n- Combined filter support when paging or exporting\r\n\r\nThis made it harder to locate specific transactions and created UX incon",
       "url": "https://github.com/btcpayserver/btcpayserver/pull/7133",
       "createdAt": "2026-01-23T05:57:10Z",
-      "updatedAt": "2026-03-23T04:13:45Z",
-      "commentsCount": 6,
+      "updatedAt": "2026-03-24T05:40:23Z",
+      "commentsCount": 8,
       "reactionCount": 0,
       "labels": [
         {
