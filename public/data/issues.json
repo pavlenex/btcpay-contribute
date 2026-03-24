@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-24T12:56:37.699Z",
-  "totalIssues": 13,
+  "lastUpdated": "2026-03-24T18:53:46.162Z",
+  "totalIssues": 14,
   "repoCount": 5,
   "repos": [
     {
@@ -69,6 +69,36 @@
     }
   ],
   "issues": [
+    {
+      "id": 4128393046,
+      "number": 178,
+      "type": "issue",
+      "title": "[Refactor] Align Plugin Builder Builds/Owners tabs with BTCPay Server report tab",
+      "body": "Plugin Builder currently has Builds and Owners tabs that do not align well with the Report tab structure in BTCPay Server.\n\nThis issue tracks reviewing those tabs and aligning naming, grouping, and layout where appropriate, to make more consistent across both applications.\n\n<img width=\"1130\" height=\"449\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/827e72d9-9113-4a8a-b6b2-47f4a2f2e4ab\" />\n<img width=\"1133\" height=\"436\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ce3f6b6c-acb5-4429-95ed-fa3dfc6cf1c2\" />\n<img width=\"1111\" height=\"186\" alt=\"Image\" src=\"https://githu",
+      "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/178",
+      "createdAt": "2026-03-24T14:34:15Z",
+      "updatedAt": "2026-03-24T14:34:37Z",
+      "commentsCount": 1,
+      "reactionCount": 1,
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        }
+      ],
+      "repo": {
+        "name": "btcpayserver-plugin-builder",
+        "fullName": "btcpayserver/btcpayserver-plugin-builder",
+        "language": "C#",
+        "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder"
+      },
+      "assignees": [],
+      "author": {
+        "login": "thgO-O",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/107907441?v=4",
+        "url": "https://github.com/thgO-O"
+      }
+    },
     {
       "id": 4096797025,
       "number": 549,
