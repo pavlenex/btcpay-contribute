@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-23T12:50:45.102Z",
-  "totalIssues": 15,
+  "lastUpdated": "2026-03-24T01:23:41.389Z",
+  "totalIssues": 14,
   "repoCount": 6,
   "repos": [
     {
@@ -280,8 +280,8 @@
       "body": "## Description \n\nAdd a cleanup job similar to the existing stale plugin cleanup, but for users who registered and never confirmed their email.\n\nScope:\n- delete only users with `EmailConfirmed = false`\n- only delete users older than a defined threshold\n- never delete users with roles, plugin ownership, reviews, or other linked data\n- run on a schedule, like the current plugin cleanup\n- add tests for delete vs keep scenarios\n\nNote:\nAspNetUsers currently does not seem to store account creation date, so this likely needs a CreatedAt field first to define what is stale safely.",
       "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/166",
       "createdAt": "2026-03-12T21:36:42Z",
-      "updatedAt": "2026-03-22T19:39:20Z",
-      "commentsCount": 2,
+      "updatedAt": "2026-03-23T14:34:02Z",
+      "commentsCount": 4,
       "reactionCount": 1,
       "labels": [
         {
@@ -537,87 +537,9 @@
         "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
         "url": "https://github.com/pavlenex"
       }
-    },
-    {
-      "id": 389532105,
-      "number": 444,
-      "type": "issue",
-      "title": "RTL Language Support",
-      "body": "Right-to-Left languages have display issues in the checkout page. Arabic translation is available for anyone who wants to work on this issue. \r\n\r\nOpen RTL Issue to close outdated #305 \r\n",
-      "url": "https://github.com/btcpayserver/btcpayserver/issues/444",
-      "createdAt": "2018-12-10T23:29:17Z",
-      "updatedAt": "2026-03-23T12:31:49Z",
-      "commentsCount": 11,
-      "reactionCount": 1,
-      "labels": [
-        {
-          "name": "Enhancement",
-          "color": "267588"
-        },
-        {
-          "name": "Translation",
-          "color": "b3e1f9"
-        },
-        {
-          "name": "good first issue",
-          "color": "3de570"
-        },
-        {
-          "name": "Invoice",
-          "color": "68d2e8"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver",
-        "fullName": "btcpayserver/btcpayserver",
-        "language": "C#",
-        "url": "https://github.com/btcpayserver/btcpayserver"
-      },
-      "assignees": [
-        {
-          "login": "Abhijay007",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/64387054?v=4",
-          "url": "https://github.com/Abhijay007"
-        }
-      ],
-      "author": {
-        "login": "britttttk",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/39231115?v=4",
-        "url": "https://github.com/britttttk"
-      }
     }
   ],
   "testerItems": [
-    {
-      "id": 4116812673,
-      "number": 7259,
-      "type": "pr",
-      "title": "feat: add RTL Language Support",
-      "body": "closes #444\r\n\r\nAdded RTL layout support for Arabic, Hebrew, and Farsi on the checkout page. Sets `dir=\"rtl\"` on `<html>` server-side on load and client-side on language switch, and replaced physical CSS direction properties with logical equivalents, following W3C bidirectional text guidelines and the same approach used by Google, and Stripe etc.\r\n\r\n<img width=\"3024\" height=\"2848\" alt=\"RTL\" src=\"https://github.com/user-attachments/assets/5de621db-9d03-4119-be0f-b4e62277b640\" />\r\n\r\nNOTE: I temporarily translated cheat text for testing",
-      "url": "https://github.com/btcpayserver/btcpayserver/pull/7259",
-      "createdAt": "2026-03-22T18:55:03Z",
-      "updatedAt": "2026-03-23T11:21:39Z",
-      "commentsCount": 2,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "User Testing",
-          "color": "F8ADDA"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver",
-        "fullName": "btcpayserver/btcpayserver",
-        "language": "C#",
-        "url": "https://github.com/btcpayserver/btcpayserver"
-      },
-      "assignees": [],
-      "author": {
-        "login": "Abhijay007",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/64387054?v=4",
-        "url": "https://github.com/Abhijay007"
-      }
-    },
     {
       "id": 3941153156,
       "number": 7183,
