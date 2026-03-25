@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-03-25T12:53:22.735Z",
-  "totalIssues": 13,
-  "repoCount": 5,
+  "lastUpdated": "2026-03-25T18:47:23.907Z",
+  "totalIssues": 15,
+  "repoCount": 6,
   "repos": [
     {
       "id": 100711978,
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7456
+      "stars": 7460
     },
     {
       "id": 101657836,
@@ -66,9 +66,55 @@
       "language": "HTML",
       "topics": [],
       "stars": 23
+    },
+    {
+      "id": 1054915099,
+      "name": "btcpayserver-translator",
+      "fullName": "btcpayserver/btcpayserver-translator",
+      "description": "A command-line tool to translate BTCPay Server's UI text to multiple languages using OpenRouter AI service. Now enjoy BTCPay Server in your local languages. ",
+      "url": "https://github.com/btcpayserver/btcpayserver-translator",
+      "language": "C#",
+      "topics": [
+        "hacktoberfest"
+      ],
+      "stars": 2
     }
   ],
   "issues": [
+    {
+      "id": 4137213069,
+      "number": 34,
+      "type": "issue",
+      "title": "Language packs contain LLM/meta responses instead of translations",
+      "body": "## Description \n\nSome language pack entries appear to contain LLM meta responses rather than actual translations. For example, the key \"follow these instructions\" is translated as \"I'm ready to translate English text for BTCPay Server. Please provide the English text you'd like me to translate.\"\n\nBecause BTCPay imports these dictionaries as-is, those responses show up directly in the UI.\n\nThis suggests the translation pipeline/review process is allowing prompt-style or assistant-style responses into the published JSON files.\n\nI think this needs two things:\n\n- cleanup of the affected entries in",
+      "url": "https://github.com/btcpayserver/btcpayserver-translator/issues/34",
+      "createdAt": "2026-03-25T17:35:16Z",
+      "updatedAt": "2026-03-25T18:16:54Z",
+      "commentsCount": 0,
+      "reactionCount": 1,
+      "labels": [
+        {
+          "name": "bug",
+          "color": "d73a4a"
+        },
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        }
+      ],
+      "repo": {
+        "name": "btcpayserver-translator",
+        "fullName": "btcpayserver/btcpayserver-translator",
+        "language": "C#",
+        "url": "https://github.com/btcpayserver/btcpayserver-translator"
+      },
+      "assignees": [],
+      "author": {
+        "login": "thgO-O",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/107907441?v=4",
+        "url": "https://github.com/thgO-O"
+      }
+    },
     {
       "id": 4135110554,
       "number": 180,
@@ -265,8 +311,8 @@
       "body": "Our documentation at https://docs.btcpayserver.org/Walkthrough is slightly outdated.\n\nThe goal of that page is to walk users through each item in the sidebar in the order it appears, give a short explanation of what it does, and link to a dedicated page where they can learn more about that feature.\nHere’s the proposed approach for refactoring this page:\n\n1. Set up a local BTCPay Server instance if you do not already have access to a server with admin permissions. This is important because some sidebar features are only visible to admins. We should also highlight this in the documentation, sinc",
       "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1559",
       "createdAt": "2026-03-18T11:11:36Z",
-      "updatedAt": "2026-03-18T11:11:36Z",
-      "commentsCount": 0,
+      "updatedAt": "2026-03-25T14:06:47Z",
+      "commentsCount": 1,
       "reactionCount": 0,
       "labels": [
         {
@@ -295,8 +341,8 @@
       "body": "## Description \n\nAdd a cleanup job similar to the existing stale plugin cleanup, but for users who registered and never confirmed their email.\n\nScope:\n- delete only users with `EmailConfirmed = false`\n- only delete users older than a defined threshold\n- never delete users with roles, plugin ownership, reviews, or other linked data\n- run on a schedule, like the current plugin cleanup\n- add tests for delete vs keep scenarios\n\nNote:\nAspNetUsers currently does not seem to store account creation date, so this likely needs a CreatedAt field first to define what is stale safely.",
       "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/166",
       "createdAt": "2026-03-12T21:36:42Z",
-      "updatedAt": "2026-03-23T14:34:02Z",
-      "commentsCount": 4,
+      "updatedAt": "2026-03-25T17:40:45Z",
+      "commentsCount": 7,
       "reactionCount": 1,
       "labels": [
         {
@@ -310,7 +356,13 @@
         "language": "C#",
         "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder"
       },
-      "assignees": [],
+      "assignees": [
+        {
+          "login": "1amKhush",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/180318257?v=4",
+          "url": "https://github.com/1amKhush"
+        }
+      ],
       "author": {
         "login": "thgO-O",
         "avatarUrl": "https://avatars.githubusercontent.com/u/107907441?v=4",
@@ -355,8 +407,8 @@
       "body": "**Context:**\nAs mentioned in [Issue #3954](https://github.com/btcpayserver/btcpayserver/issues/3954), there is a need to standardize the Wallet view so that it offers feature parity with other views in BTCPay Server.\n\n<img width=\"2297\" height=\"262\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/2e36b1fd-c0ec-42dc-b64f-48f0eabf8ed3\" />\n\n\n**Request:**\nEnhance the Wallet transaction view to allow users to filter transactions by date in the same way as the Payment Requests and Invoices views. This would help users more easily locate relevant transactions and improve consistency across",
       "url": "https://github.com/btcpayserver/btcpayserver/issues/7092",
       "createdAt": "2026-01-10T11:16:33Z",
-      "updatedAt": "2026-03-24T08:05:42Z",
-      "commentsCount": 3,
+      "updatedAt": "2026-03-25T18:23:28Z",
+      "commentsCount": 4,
       "reactionCount": 0,
       "labels": [
         {
@@ -409,6 +461,40 @@
         "login": "petzsch",
         "avatarUrl": "https://avatars.githubusercontent.com/u/1374810?v=4",
         "url": "https://github.com/petzsch"
+      }
+    },
+    {
+      "id": 3506661273,
+      "number": 1,
+      "type": "issue",
+      "title": "Add Support for More Languages in BTCPay Server Translator",
+      "body": "### Description\n\nThe BTCPay Server Translator currently supports several key languages, but we’re looking to **expand support for more widely used global languages** to make BTCPay Server accessible to even more users.\n\nThis issue tracks adding **new major languages** to the translation tool and updating relevant configuration, documentation, and testing.\n\n---\n\n###  Currently Supported Languages\n\nThe following translations are already available:\n\n- 🇫🇷 French (`french.json`)\n- 🇮🇳 Hindi (`hindi.json`)\n- 🇯🇵 Japanese (`japanese.json`)\n- 🇧🇷 Portuguese (Brazil) (`portuguese (brazil).json`)\n-",
+      "url": "https://github.com/btcpayserver/btcpayserver-translator/issues/1",
+      "createdAt": "2025-10-12T04:32:49Z",
+      "updatedAt": "2026-03-25T18:16:30Z",
+      "commentsCount": 0,
+      "reactionCount": 0,
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "Hacktoberfest",
+          "color": "cb7426"
+        }
+      ],
+      "repo": {
+        "name": "btcpayserver-translator",
+        "fullName": "btcpayserver/btcpayserver-translator",
+        "language": "C#",
+        "url": "https://github.com/btcpayserver/btcpayserver-translator"
+      },
+      "assignees": [],
+      "author": {
+        "login": "Abhijay007",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/64387054?v=4",
+        "url": "https://github.com/Abhijay007"
       }
     },
     {
@@ -491,6 +577,36 @@
     }
   ],
   "testerItems": [
+    {
+      "id": 4082325681,
+      "number": 33,
+      "type": "pr",
+      "title": "26-03-16_Update Translation_de_DE",
+      "body": "Hi BTCPay Server Team,\r\n\r\nI have been working on a comprehensive review and improvement of the German translation file. Here is a summary of all the changes made:\r\n\r\nFixes & Corrections:\r\n- Fixed 29 AI-generated placeholder texts that were accidentally included as translations (e.g. \"Please provide the English text...\" or \"I am now a professional translator...\")\r\n- Replaced all informal \"du\" forms with the formal \"Sie\" form throughout the entire file\r\n- Added 103 missing translation entries that were not present in the original file\r\n\r\nTerminology Consistency:\r\n- \"Store\" → consistently transla",
+      "url": "https://github.com/btcpayserver/btcpayserver-translator/pull/33",
+      "createdAt": "2026-03-16T12:56:01Z",
+      "updatedAt": "2026-03-25T18:25:20Z",
+      "commentsCount": 4,
+      "reactionCount": 0,
+      "labels": [
+        {
+          "name": "user-testing",
+          "color": "D13DD2"
+        }
+      ],
+      "repo": {
+        "name": "btcpayserver-translator",
+        "fullName": "btcpayserver/btcpayserver-translator",
+        "language": "C#",
+        "url": "https://github.com/btcpayserver/btcpayserver-translator"
+      },
+      "assignees": [],
+      "author": {
+        "login": "bsn21m",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/83470431?v=4",
+        "url": "https://github.com/bsn21m"
+      }
+    },
     {
       "id": 3941153156,
       "number": 7183,
@@ -685,8 +801,8 @@
       "body": "Our documentation at https://docs.btcpayserver.org/Walkthrough is slightly outdated.\n\nThe goal of that page is to walk users through each item in the sidebar in the order it appears, give a short explanation of what it does, and link to a dedicated page where they can learn more about that feature.\nHere’s the proposed approach for refactoring this page:\n\n1. Set up a local BTCPay Server instance if you do not already have access to a server with admin permissions. This is important because some sidebar features are only visible to admins. We should also highlight this in the documentation, sinc",
       "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1559",
       "createdAt": "2026-03-18T11:11:36Z",
-      "updatedAt": "2026-03-18T11:11:36Z",
-      "commentsCount": 0,
+      "updatedAt": "2026-03-25T14:06:47Z",
+      "commentsCount": 1,
       "reactionCount": 0,
       "labels": [
         {
