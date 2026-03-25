@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-25T01:28:08.549Z",
-  "totalIssues": 14,
+  "lastUpdated": "2026-03-25T06:55:07.388Z",
+  "totalIssues": 13,
   "repoCount": 5,
   "repos": [
     {
@@ -175,8 +175,8 @@
       "body": "Currently, the user documentation lists many plugins in the sidebar, but there is no dedicated Plugins page that serves as a proper introduction for end users.\n\nWe do have a developer-focused page at https://docs.btcpayserver.org/Development/Plugins/, but regular BTCPay Server users are not clearly introduced to plugins from a user perspective.\n\nThe goal of this issue is to create a clear first introduction point for plugins in the user documentation, so users better understand what plugins are, how they become available, and how they can expand BTCPay Server functionality.\n\nA dedicated user-f",
       "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1564",
       "createdAt": "2026-03-18T11:52:57Z",
-      "updatedAt": "2026-03-19T20:18:25Z",
-      "commentsCount": 2,
+      "updatedAt": "2026-03-25T01:36:54Z",
+      "commentsCount": 3,
       "reactionCount": 0,
       "labels": [
         {
@@ -268,36 +268,6 @@
       "updatedAt": "2026-03-23T14:34:02Z",
       "commentsCount": 4,
       "reactionCount": 1,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver-plugin-builder",
-        "fullName": "btcpayserver/btcpayserver-plugin-builder",
-        "language": "C#",
-        "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder"
-      },
-      "assignees": [],
-      "author": {
-        "login": "thgO-O",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/107907441?v=4",
-        "url": "https://github.com/thgO-O"
-      }
-    },
-    {
-      "id": 4046354134,
-      "number": 163,
-      "type": "issue",
-      "title": "[Feature] Add health check endpoint to Plugin Builder",
-      "body": "Plugin Builder currently has no dedicated health check endpoint.\n\nSince startup depends on Postgres, Docker, and Azure Storage, it would be useful to expose a simple probe endpoint for deployments and monitoring.\n\nSuggested scope:\n- add `/health`\n- return `200 OK` when the app is ready to serve requests\n- return `503` when startup is incomplete or a critical dependency is unavailable\n- keep the check lightweight",
-      "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/163",
-      "createdAt": "2026-03-09T15:44:59Z",
-      "updatedAt": "2026-03-20T17:03:25Z",
-      "commentsCount": 13,
-      "reactionCount": 0,
       "labels": [
         {
           "name": "good first issue",
@@ -563,8 +533,8 @@
       "body": "## Summary\r\nAdds invoice‑style search and date filtering to the wallet transactions view, so users can quickly locate transactions by TXID or time range. The UI mirrors the invoice/payment request patterns and filters apply consistently to infinite scroll and exports.\r\n\r\n## Problem\r\nPer #7091 and #7092 (and #3954), wallet transactions lacked:\r\n- A search bar for transaction IDs (and related metadata)\r\n- Date filtering controls consistent with invoices/payment requests\r\n- Combined filter support when paging or exporting\r\n\r\nThis made it harder to locate specific transactions and created UX incon",
       "url": "https://github.com/btcpayserver/btcpayserver/pull/7133",
       "createdAt": "2026-01-23T05:57:10Z",
-      "updatedAt": "2026-03-25T00:58:27Z",
-      "commentsCount": 9,
+      "updatedAt": "2026-03-25T06:21:29Z",
+      "commentsCount": 10,
       "reactionCount": 0,
       "labels": [
         {
@@ -659,8 +629,8 @@
       "body": "Currently, the user documentation lists many plugins in the sidebar, but there is no dedicated Plugins page that serves as a proper introduction for end users.\n\nWe do have a developer-focused page at https://docs.btcpayserver.org/Development/Plugins/, but regular BTCPay Server users are not clearly introduced to plugins from a user perspective.\n\nThe goal of this issue is to create a clear first introduction point for plugins in the user documentation, so users better understand what plugins are, how they become available, and how they can expand BTCPay Server functionality.\n\nA dedicated user-f",
       "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1564",
       "createdAt": "2026-03-18T11:52:57Z",
-      "updatedAt": "2026-03-19T20:18:25Z",
-      "commentsCount": 2,
+      "updatedAt": "2026-03-25T01:36:54Z",
+      "commentsCount": 3,
       "reactionCount": 0,
       "labels": [
         {
