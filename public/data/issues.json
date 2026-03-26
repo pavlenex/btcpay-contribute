@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-03-26T01:47:11.042Z",
-  "totalIssues": 14,
-  "repoCount": 6,
+  "lastUpdated": "2026-03-26T12:58:30.794Z",
+  "totalIssues": 13,
+  "repoCount": 5,
   "repos": [
     {
       "id": 100711978,
@@ -34,18 +34,6 @@
         "documentation"
       ],
       "stars": 414
-    },
-    {
-      "id": 249388671,
-      "name": "directory.btcpayserver.org",
-      "fullName": "btcpayserver/directory.btcpayserver.org",
-      "description": "BTCPay Server Directory - Merchants, Projects & Charities accepting Bitcoin",
-      "url": "https://github.com/btcpayserver/directory.btcpayserver.org",
-      "language": "TypeScript",
-      "topics": [
-        "btcpayserver"
-      ],
-      "stars": 44
     },
     {
       "id": 563141684,
@@ -176,40 +164,6 @@
       }
     },
     {
-      "id": 4096666216,
-      "number": 548,
-      "type": "issue",
-      "title": "New entry submission - Bitasha",
-      "body": "New submission:\n\nName: Bitasha\nUrl: https://bitasha.com/\nType: merchants\nSubType: electronics\nDescription: Bitasha is a open Source Bitcoin ASIC Home Miner which is built by Indians for India",
-      "url": "https://github.com/btcpayserver/directory.btcpayserver.org/issues/548",
-      "createdAt": "2026-03-18T17:31:00Z",
-      "updatedAt": "2026-03-18T19:36:19Z",
-      "commentsCount": 0,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "Submission-approved",
-          "color": "4ddd60"
-        }
-      ],
-      "repo": {
-        "name": "directory.btcpayserver.org",
-        "fullName": "btcpayserver/directory.btcpayserver.org",
-        "language": "TypeScript",
-        "url": "https://github.com/btcpayserver/directory.btcpayserver.org"
-      },
-      "assignees": [],
-      "author": {
-        "login": "Abhijay007",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/64387054?v=4",
-        "url": "https://github.com/Abhijay007"
-      }
-    },
-    {
       "id": 4094633628,
       "number": 1564,
       "type": "issue",
@@ -307,8 +261,8 @@
       "body": "## Description \n\nAdd a cleanup job similar to the existing stale plugin cleanup, but for users who registered and never confirmed their email.\n\nScope:\n- delete only users with `EmailConfirmed = false`\n- only delete users older than a defined threshold\n- never delete users with roles, plugin ownership, reviews, or other linked data\n- run on a schedule, like the current plugin cleanup\n- add tests for delete vs keep scenarios\n\nNote:\nAspNetUsers currently does not seem to store account creation date, so this likely needs a CreatedAt field first to define what is stale safely.",
       "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/166",
       "createdAt": "2026-03-12T21:36:42Z",
-      "updatedAt": "2026-03-25T19:15:54Z",
-      "commentsCount": 8,
+      "updatedAt": "2026-03-26T07:49:22Z",
+      "commentsCount": 9,
       "reactionCount": 1,
       "labels": [
         {
