@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-03-26T12:58:30.794Z",
-  "totalIssues": 13,
+  "lastUpdated": "2026-03-27T01:47:34.537Z",
+  "totalIssues": 12,
   "repoCount": 5,
   "repos": [
     {
@@ -77,8 +77,8 @@
       "body": "## Description \n\nSome language pack entries appear to contain LLM meta responses rather than actual translations. For example, the key \"follow these instructions\" is translated as \"I'm ready to translate English text for BTCPay Server. Please provide the English text you'd like me to translate.\"\n\nBecause BTCPay imports these dictionaries as-is, those responses show up directly in the UI.\n\nThis suggests the translation pipeline/review process is allowing prompt-style or assistant-style responses into the published JSON files.\n\nI think this needs two things:\n\n- cleanup of the affected entries in",
       "url": "https://github.com/btcpayserver/btcpayserver-translator/issues/34",
       "createdAt": "2026-03-25T17:35:16Z",
-      "updatedAt": "2026-03-25T19:13:55Z",
-      "commentsCount": 4,
+      "updatedAt": "2026-03-26T19:52:34Z",
+      "commentsCount": 5,
       "reactionCount": 1,
       "labels": [
         {
@@ -251,42 +251,6 @@
         "login": "pavlenex",
         "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
         "url": "https://github.com/pavlenex"
-      }
-    },
-    {
-      "id": 4067414699,
-      "number": 166,
-      "type": "issue",
-      "title": "[Feature] Cleanup stale unconfirmed users",
-      "body": "## Description \n\nAdd a cleanup job similar to the existing stale plugin cleanup, but for users who registered and never confirmed their email.\n\nScope:\n- delete only users with `EmailConfirmed = false`\n- only delete users older than a defined threshold\n- never delete users with roles, plugin ownership, reviews, or other linked data\n- run on a schedule, like the current plugin cleanup\n- add tests for delete vs keep scenarios\n\nNote:\nAspNetUsers currently does not seem to store account creation date, so this likely needs a CreatedAt field first to define what is stale safely.",
-      "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/166",
-      "createdAt": "2026-03-12T21:36:42Z",
-      "updatedAt": "2026-03-26T07:49:22Z",
-      "commentsCount": 9,
-      "reactionCount": 1,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver-plugin-builder",
-        "fullName": "btcpayserver/btcpayserver-plugin-builder",
-        "language": "C#",
-        "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder"
-      },
-      "assignees": [
-        {
-          "login": "1amKhush",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/180318257?v=4",
-          "url": "https://github.com/1amKhush"
-        }
-      ],
-      "author": {
-        "login": "thgO-O",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/107907441?v=4",
-        "url": "https://github.com/thgO-O"
       }
     },
     {
