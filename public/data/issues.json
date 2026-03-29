@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T06:55:59.513Z",
+  "lastUpdated": "2026-03-29T18:32:20.881Z",
   "totalIssues": 13,
   "repoCount": 5,
   "repos": [
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7466
+      "stars": 7468
     },
     {
       "id": 101657836,
@@ -151,8 +151,8 @@
       "body": "<img width=\"1797\" height=\"895\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/a7701ff4-33f3-4956-8cad-3b550bb2f19e\" />",
       "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/180",
       "createdAt": "2026-03-25T12:37:02Z",
-      "updatedAt": "2026-03-25T12:37:21Z",
-      "commentsCount": 0,
+      "updatedAt": "2026-03-29T15:45:22Z",
+      "commentsCount": 2,
       "reactionCount": 0,
       "labels": [
         {
