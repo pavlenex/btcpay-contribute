@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-27T18:47:12.904Z",
+  "lastUpdated": "2026-03-29T01:49:48.734Z",
   "totalIssues": 13,
   "repoCount": 5,
   "repos": [
@@ -181,8 +181,8 @@
       "body": "Plugin Builder currently has Builds and Owners tabs that do not align well with the Report tab structure in BTCPay Server.\n\nThis issue tracks reviewing those tabs and aligning naming, grouping, and layout where appropriate, to make more consistent across both applications.\n\n<img width=\"1130\" height=\"449\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/827e72d9-9113-4a8a-b6b2-47f4a2f2e4ab\" />\n<img width=\"1133\" height=\"436\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ce3f6b6c-acb5-4429-95ed-fa3dfc6cf1c2\" />\n<img width=\"1111\" height=\"186\" alt=\"Image\" src=\"https://githu",
       "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/178",
       "createdAt": "2026-03-24T14:34:15Z",
-      "updatedAt": "2026-03-24T14:34:37Z",
-      "commentsCount": 1,
+      "updatedAt": "2026-03-28T19:47:58Z",
+      "commentsCount": 4,
       "reactionCount": 2,
       "labels": [
         {
@@ -301,7 +301,7 @@
       "body": "It would be great to have a default 404 error page instead of this one :\n\n<img width=\"2877\" height=\"1464\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/9a35e86f-74f4-458b-9a90-a8487c8055ec\" />",
       "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/158",
       "createdAt": "2026-02-22T10:30:20Z",
-      "updatedAt": "2026-03-27T08:56:20Z",
+      "updatedAt": "2026-03-28T19:29:07Z",
       "commentsCount": 2,
       "reactionCount": 2,
       "labels": [
@@ -316,7 +316,13 @@
         "language": "C#",
         "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder"
       },
-      "assignees": [],
+      "assignees": [
+        {
+          "login": "1amKhush",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/180318257?v=4",
+          "url": "https://github.com/1amKhush"
+        }
+      ],
       "author": {
         "login": "teamssUTXO",
         "avatarUrl": "https://avatars.githubusercontent.com/u/183613235?v=4",
