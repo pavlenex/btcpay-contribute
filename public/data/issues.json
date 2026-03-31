@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-03-31T01:48:40.951Z",
-  "totalIssues": 12,
-  "repoCount": 5,
+  "lastUpdated": "2026-03-31T13:01:09.712Z",
+  "totalIssues": 14,
+  "repoCount": 6,
   "repos": [
     {
       "id": 100711978,
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7469
+      "stars": 7470
     },
     {
       "id": 101657836,
@@ -34,6 +34,18 @@
         "documentation"
       ],
       "stars": 414
+    },
+    {
+      "id": 249388671,
+      "name": "directory.btcpayserver.org",
+      "fullName": "btcpayserver/directory.btcpayserver.org",
+      "description": "BTCPay Server Directory - Merchants, Projects & Charities accepting Bitcoin",
+      "url": "https://github.com/btcpayserver/directory.btcpayserver.org",
+      "language": "TypeScript",
+      "topics": [
+        "btcpayserver"
+      ],
+      "stars": 44
     },
     {
       "id": 563141684,
@@ -69,6 +81,40 @@
     }
   ],
   "issues": [
+    {
+      "id": 4176132182,
+      "number": 553,
+      "type": "issue",
+      "title": "New entry submission - EasyMerchant",
+      "body": "New submission:\n\nName: EasyMerchant\nUrl: https://btcpay870642.lndyn.com/plan-checkout/plancheckout_HaiUHtKgagSa7nGn2w\nTwitter: https://x.com/EasySats_\nType: hosted-btcpay\nCountry: GLOBAL\nDescription: Whether you're a Merchant ready to accept Bitcoin or a pioneer ready to expand the network, the TimeForce starts here with EasyMerchant",
+      "url": "https://github.com/btcpayserver/directory.btcpayserver.org/issues/553",
+      "createdAt": "2026-03-31T06:06:36Z",
+      "updatedAt": "2026-03-31T09:10:18Z",
+      "commentsCount": 0,
+      "reactionCount": 1,
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "Submission-approved",
+          "color": "4ddd60"
+        }
+      ],
+      "repo": {
+        "name": "directory.btcpayserver.org",
+        "fullName": "btcpayserver/directory.btcpayserver.org",
+        "language": "TypeScript",
+        "url": "https://github.com/btcpayserver/directory.btcpayserver.org"
+      },
+      "assignees": [],
+      "author": {
+        "login": "BigBossRabbit",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/87260669?v=4",
+        "url": "https://github.com/BigBossRabbit"
+      }
+    },
     {
       "id": 4152869573,
       "number": 185,
@@ -107,6 +153,40 @@
         "login": "thgO-O",
         "avatarUrl": "https://avatars.githubusercontent.com/u/107907441?v=4",
         "url": "https://github.com/thgO-O"
+      }
+    },
+    {
+      "id": 4139835510,
+      "number": 551,
+      "type": "issue",
+      "title": "New entry submission - PayInBTC",
+      "body": "New submission:\n\nName: PayInBTC\nUrl: https://payinbtc.me\nTwitter: payinbtc_me\nType: apps\nDescription: Connect your accounting software to your BTCPay instance and get a bticoin payment link on all your invoices. Works with Quickbooks, Xero, Zoho, Sage, Simplbooks and more.",
+      "url": "https://github.com/btcpayserver/directory.btcpayserver.org/issues/551",
+      "createdAt": "2026-03-26T01:59:20Z",
+      "updatedAt": "2026-03-31T09:10:28Z",
+      "commentsCount": 0,
+      "reactionCount": 0,
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        },
+        {
+          "name": "Submission-approved",
+          "color": "4ddd60"
+        }
+      ],
+      "repo": {
+        "name": "directory.btcpayserver.org",
+        "fullName": "btcpayserver/directory.btcpayserver.org",
+        "language": "TypeScript",
+        "url": "https://github.com/btcpayserver/directory.btcpayserver.org"
+      },
+      "assignees": [],
+      "author": {
+        "login": "btcteun",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/73664763?v=4",
+        "url": "https://github.com/btcteun"
       }
     },
     {
@@ -485,8 +565,8 @@
       "body": "This PR is a prototype for #6902 \r\n\r\nhttps://github.com/user-attachments/assets/43281d64-b667-448b-ade9-29a0648a8288\r\n\r\nIt adds:\r\n\r\n- Global search (local nav index + server-backexd results).\r\n- Global top-right actions (notifications/account/server operations moved from sidebar context).\r\n- Navigation restructuring to keep store-focused items in the sidebar and global actions in the top bar.\r\n- A dismissible migration hint in the sidebar to guide users to the new top-right location for server/account navigation.\r\n- Mobile navigation adjustments, including moving store selection into the hambu",
       "url": "https://github.com/btcpayserver/btcpayserver/pull/7183",
       "createdAt": "2026-02-14T11:15:48Z",
-      "updatedAt": "2026-03-30T12:49:39Z",
-      "commentsCount": 3,
+      "updatedAt": "2026-03-31T10:29:24Z",
+      "commentsCount": 4,
       "reactionCount": 0,
       "labels": [
         {
@@ -515,8 +595,8 @@
       "body": "## Summary\r\nAdds invoice‑style search and date filtering to the wallet transactions view, so users can quickly locate transactions by TXID or time range. The UI mirrors the invoice/payment request patterns and filters apply consistently to infinite scroll and exports.\r\n\r\n## Problem\r\nPer #7091 and #7092 (and #3954), wallet transactions lacked:\r\n- A search bar for transaction IDs (and related metadata)\r\n- Date filtering controls consistent with invoices/payment requests\r\n- Combined filter support when paging or exporting\r\n\r\nThis made it harder to locate specific transactions and created UX incon",
       "url": "https://github.com/btcpayserver/btcpayserver/pull/7133",
       "createdAt": "2026-01-23T05:57:10Z",
-      "updatedAt": "2026-03-30T21:54:53Z",
-      "commentsCount": 14,
+      "updatedAt": "2026-03-31T11:39:05Z",
+      "commentsCount": 15,
       "reactionCount": 0,
       "labels": [
         {
@@ -545,7 +625,7 @@
       "body": "Fixes #5612.\n\nClarifies the LND Seed Backup page copy to set correct expectations for recovery steps under some deployments (e.g. BTCPay Server Docker), where LND may be initialized/unlocked automatically and recovery may require an interactive shell (TTY) and temporarily disabling automatic init/unlock.\n\nChanges:\n- Add a short clarification paragraph on the LND Seed Backup page.\n- Add the new string to Translations.Default.cs for localization support.\n\nHow to verify:\n- Server → Services → LND Seed Backup: confirm the new paragraph appears above the link to LND's recovery documentation.\n\nNote:",
       "url": "https://github.com/btcpayserver/btcpayserver/pull/7113",
       "createdAt": "2026-01-17T13:58:16Z",
-      "updatedAt": "2026-03-18T11:56:20Z",
+      "updatedAt": "2026-03-31T08:01:34Z",
       "commentsCount": 6,
       "reactionCount": 0,
       "labels": [
