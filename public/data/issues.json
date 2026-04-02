@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-04-02T07:04:15.491Z",
-  "totalIssues": 15,
+  "lastUpdated": "2026-04-02T12:56:33.622Z",
+  "totalIssues": 16,
   "repoCount": 6,
   "repos": [
     {
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7480
+      "stars": 7482
     },
     {
       "id": 101657836,
@@ -81,6 +81,36 @@
     }
   ],
   "issues": [
+    {
+      "id": 4192328653,
+      "number": 1578,
+      "type": "issue",
+      "title": "Hamburger menu is not displaying on index page",
+      "body": "![image](https://github.com/user-attachments/assets/84c85936-da31-485d-afa4-0f541a840a00)\n\nRest of the pages are fine\n![image](https://github.com/user-attachments/assets/dd0380d7-6136-4ab0-8da1-5c66d4b31275)\n\nTask is to show menu on the homepage of docs in same way its called for the other pages.\n\nFor example ![image](https://github.com/user-attachments/assets/5293f76f-ae1d-4531-ad11-ef1faf50463d)",
+      "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1578",
+      "createdAt": "2026-04-02T07:15:05Z",
+      "updatedAt": "2026-04-02T07:16:27Z",
+      "commentsCount": 0,
+      "reactionCount": 0,
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "19b542"
+        }
+      ],
+      "repo": {
+        "name": "btcpayserver-doc",
+        "fullName": "btcpayserver/btcpayserver-doc",
+        "language": "Shell",
+        "url": "https://github.com/btcpayserver/btcpayserver-doc"
+      },
+      "assignees": [],
+      "author": {
+        "login": "pavlenex",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
+        "url": "https://github.com/pavlenex"
+      }
+    },
     {
       "id": 4187170894,
       "number": 195,
@@ -683,6 +713,36 @@
     }
   ],
   "writerIssues": [
+    {
+      "id": 4192328653,
+      "number": 1578,
+      "type": "issue",
+      "title": "Hamburger menu is not displaying on index page",
+      "body": "![image](https://github.com/user-attachments/assets/84c85936-da31-485d-afa4-0f541a840a00)\n\nRest of the pages are fine\n![image](https://github.com/user-attachments/assets/dd0380d7-6136-4ab0-8da1-5c66d4b31275)\n\nTask is to show menu on the homepage of docs in same way its called for the other pages.\n\nFor example ![image](https://github.com/user-attachments/assets/5293f76f-ae1d-4531-ad11-ef1faf50463d)",
+      "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1578",
+      "createdAt": "2026-04-02T07:15:05Z",
+      "updatedAt": "2026-04-02T07:16:27Z",
+      "commentsCount": 0,
+      "reactionCount": 0,
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "19b542"
+        }
+      ],
+      "repo": {
+        "name": "btcpayserver-doc",
+        "fullName": "btcpayserver/btcpayserver-doc",
+        "language": "Shell",
+        "url": "https://github.com/btcpayserver/btcpayserver-doc"
+      },
+      "assignees": [],
+      "author": {
+        "login": "pavlenex",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/36959754?v=4",
+        "url": "https://github.com/pavlenex"
+      }
+    },
     {
       "id": 4094633628,
       "number": 1564,
