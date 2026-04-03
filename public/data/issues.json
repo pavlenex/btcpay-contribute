@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-03T07:00:54.477Z",
+  "lastUpdated": "2026-04-03T18:38:06.119Z",
   "totalIssues": 16,
   "repoCount": 6,
   "repos": [
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7485
+      "stars": 7486
     },
     {
       "id": 101657836,
@@ -325,8 +325,8 @@
       "body": "Plugin Builder currently has Builds and Owners tabs that do not align well with the Report tab structure in BTCPay Server.\n\nThis issue tracks reviewing those tabs and aligning naming, grouping, and layout where appropriate, to make more consistent across both applications.\n\n<img width=\"1130\" height=\"449\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/827e72d9-9113-4a8a-b6b2-47f4a2f2e4ab\" />\n<img width=\"1133\" height=\"436\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ce3f6b6c-acb5-4429-95ed-fa3dfc6cf1c2\" />\n<img width=\"1111\" height=\"186\" alt=\"Image\" src=\"https://githu",
       "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/178",
       "createdAt": "2026-03-24T14:34:15Z",
-      "updatedAt": "2026-03-31T14:02:13Z",
-      "commentsCount": 5,
+      "updatedAt": "2026-04-03T09:12:17Z",
+      "commentsCount": 6,
       "reactionCount": 2,
       "labels": [
         {
