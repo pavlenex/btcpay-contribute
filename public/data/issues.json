@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-04T06:52:32.182Z",
-  "totalIssues": 16,
-  "repoCount": 6,
+  "lastUpdated": "2026-04-04T12:39:01.785Z",
+  "totalIssues": 13,
+  "repoCount": 5,
   "repos": [
     {
       "id": 100711978,
@@ -34,18 +34,6 @@
         "documentation"
       ],
       "stars": 414
-    },
-    {
-      "id": 249388671,
-      "name": "directory.btcpayserver.org",
-      "fullName": "btcpayserver/directory.btcpayserver.org",
-      "description": "BTCPay Server Directory - Merchants, Projects & Charities accepting Bitcoin",
-      "url": "https://github.com/btcpayserver/directory.btcpayserver.org",
-      "language": "TypeScript",
-      "topics": [
-        "btcpayserver"
-      ],
-      "stars": 44
     },
     {
       "id": 563141684,
@@ -142,74 +130,6 @@
       }
     },
     {
-      "id": 4183219902,
-      "number": 554,
-      "type": "issue",
-      "title": "New entry submission - Northwest Vapors",
-      "body": "New submission:\n\nName: Northwest Vapors\nUrl: https://nwvliquids.com\nType: merchants\nSubType: health-household\nDescription: We have been manufacturing quality e-liquids since 2011 at Northwest Vapors",
-      "url": "https://github.com/btcpayserver/directory.btcpayserver.org/issues/554",
-      "createdAt": "2026-04-01T00:35:03Z",
-      "updatedAt": "2026-04-01T10:04:14Z",
-      "commentsCount": 0,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "Submission-approved",
-          "color": "4ddd60"
-        }
-      ],
-      "repo": {
-        "name": "directory.btcpayserver.org",
-        "fullName": "btcpayserver/directory.btcpayserver.org",
-        "language": "TypeScript",
-        "url": "https://github.com/btcpayserver/directory.btcpayserver.org"
-      },
-      "assignees": [],
-      "author": {
-        "login": "Billkrause",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/17137510?v=4",
-        "url": "https://github.com/Billkrause"
-      }
-    },
-    {
-      "id": 4176132182,
-      "number": 553,
-      "type": "issue",
-      "title": "New entry submission - EasyMerchant",
-      "body": "New submission:\n\nName: EasyMerchant\nUrl: https://btcpay870642.lndyn.com/plan-checkout/plancheckout_HaiUHtKgagSa7nGn2w\nTwitter: https://x.com/EasySats_\nType: hosted-btcpay\nCountry: GLOBAL\nDescription: Whether you're a Merchant ready to accept Bitcoin or a pioneer ready to expand the network, the TimeForce starts here with EasyMerchant",
-      "url": "https://github.com/btcpayserver/directory.btcpayserver.org/issues/553",
-      "createdAt": "2026-03-31T06:06:36Z",
-      "updatedAt": "2026-03-31T09:10:18Z",
-      "commentsCount": 0,
-      "reactionCount": 2,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "Submission-approved",
-          "color": "4ddd60"
-        }
-      ],
-      "repo": {
-        "name": "directory.btcpayserver.org",
-        "fullName": "btcpayserver/directory.btcpayserver.org",
-        "language": "TypeScript",
-        "url": "https://github.com/btcpayserver/directory.btcpayserver.org"
-      },
-      "assignees": [],
-      "author": {
-        "login": "BigBossRabbit",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/87260669?v=4",
-        "url": "https://github.com/BigBossRabbit"
-      }
-    },
-    {
       "id": 4152869573,
       "number": 185,
       "type": "issue",
@@ -247,40 +167,6 @@
         "login": "thgO-O",
         "avatarUrl": "https://avatars.githubusercontent.com/u/107907441?v=4",
         "url": "https://github.com/thgO-O"
-      }
-    },
-    {
-      "id": 4139835510,
-      "number": 551,
-      "type": "issue",
-      "title": "New entry submission - PayInBTC",
-      "body": "New submission:\n\nName: PayInBTC\nUrl: https://payinbtc.me\nTwitter: payinbtc_me\nType: apps\nDescription: Connect your accounting software to your BTCPay instance and get a bticoin payment link on all your invoices. Works with Quickbooks, Xero, Zoho, Sage, Simplbooks and more.",
-      "url": "https://github.com/btcpayserver/directory.btcpayserver.org/issues/551",
-      "createdAt": "2026-03-26T01:59:20Z",
-      "updatedAt": "2026-03-31T09:10:28Z",
-      "commentsCount": 0,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "Submission-approved",
-          "color": "4ddd60"
-        }
-      ],
-      "repo": {
-        "name": "directory.btcpayserver.org",
-        "fullName": "btcpayserver/directory.btcpayserver.org",
-        "language": "TypeScript",
-        "url": "https://github.com/btcpayserver/directory.btcpayserver.org"
-      },
-      "assignees": [],
-      "author": {
-        "login": "btcteun",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/73664763?v=4",
-        "url": "https://github.com/btcteun"
       }
     },
     {
