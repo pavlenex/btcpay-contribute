@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-06T18:47:41.501Z",
+  "lastUpdated": "2026-04-08T01:50:01.423Z",
   "totalIssues": 12,
   "repoCount": 5,
   "repos": [
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7498
+      "stars": 7499
     },
     {
       "id": 101657836,
@@ -485,7 +485,7 @@
       "body": "This PR is a prototype for #6902 \r\n\r\nhttps://github.com/user-attachments/assets/43281d64-b667-448b-ade9-29a0648a8288\r\n\r\nIt adds:\r\n\r\n- Global search (local nav index + server-backexd results).\r\n- Global top-right actions (notifications/account/server operations moved from sidebar context).\r\n- Navigation restructuring to keep store-focused items in the sidebar and global actions in the top bar.\r\n- A dismissible migration hint in the sidebar to guide users to the new top-right location for server/account navigation.\r\n- Mobile navigation adjustments, including moving store selection into the hambu",
       "url": "https://github.com/btcpayserver/btcpayserver/pull/7183",
       "createdAt": "2026-02-14T11:15:48Z",
-      "updatedAt": "2026-03-31T10:29:24Z",
+      "updatedAt": "2026-04-07T06:59:13Z",
       "commentsCount": 4,
       "reactionCount": 0,
       "labels": [
