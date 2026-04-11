@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-11T01:44:42.690Z",
-  "totalIssues": 13,
-  "repoCount": 6,
+  "lastUpdated": "2026-04-11T12:40:43.279Z",
+  "totalIssues": 11,
+  "repoCount": 5,
   "repos": [
     {
       "id": 100711978,
@@ -34,18 +34,6 @@
         "documentation"
       ],
       "stars": 414
-    },
-    {
-      "id": 249388671,
-      "name": "directory.btcpayserver.org",
-      "fullName": "btcpayserver/directory.btcpayserver.org",
-      "description": "BTCPay Server Directory - Merchants, Projects & Charities accepting Bitcoin",
-      "url": "https://github.com/btcpayserver/directory.btcpayserver.org",
-      "language": "TypeScript",
-      "topics": [
-        "btcpayserver"
-      ],
-      "stars": 45
     },
     {
       "id": 563141684,
@@ -81,74 +69,6 @@
     }
   ],
   "issues": [
-    {
-      "id": 4226137089,
-      "number": 558,
-      "type": "issue",
-      "title": "New entry submission - Tour Guide Lite",
-      "body": "New submission:\n\nName: Tour Guide Lite\nUrl: https://tourguidelite.wificlashroom.online/\nType: merchants\nSubType: tools\nDescription: \n1. Sign in with Google\n2. Buy credits (10 free). 1 credit = 1 room session.\n3. Open a room instantly\n4. Go live. Broadcaster talks, listeners hear\n5. Done\n\nTourGuideLite is the pay-as-you-go version of TourGuidePro. No monthly subscription, no commitment. You buy\ncredits, each credit gives you one room session — use it whenever you need it, for as long as you need it.\nPerfect for spontaneous guides, one-off experiences, pop-up tours, or anyone who guides occasion",
-      "url": "https://github.com/btcpayserver/directory.btcpayserver.org/issues/558",
-      "createdAt": "2026-04-08T16:45:44Z",
-      "updatedAt": "2026-04-09T10:03:59Z",
-      "commentsCount": 0,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "Submission-approved",
-          "color": "4ddd60"
-        }
-      ],
-      "repo": {
-        "name": "directory.btcpayserver.org",
-        "fullName": "btcpayserver/directory.btcpayserver.org",
-        "language": "TypeScript",
-        "url": "https://github.com/btcpayserver/directory.btcpayserver.org"
-      },
-      "assignees": [],
-      "author": {
-        "login": "fburrull",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/17686616?v=4",
-        "url": "https://github.com/fburrull"
-      }
-    },
-    {
-      "id": 4202878386,
-      "number": 555,
-      "type": "issue",
-      "title": "New entry submission - Blockchange",
-      "body": "New submission:\n\nName: Blockchange\nUrl: https://www.blockchange.expert\nTwitter: BlockchangeExp\nType: merchants\nSubType: payment-services\nDescription: We design complete value flows across cards, banks, and local rails, with final settlement in bitcoin or stablecoins. Chargeback-free by design.",
-      "url": "https://github.com/btcpayserver/directory.btcpayserver.org/issues/555",
-      "createdAt": "2026-04-04T01:23:13Z",
-      "updatedAt": "2026-04-09T10:03:58Z",
-      "commentsCount": 0,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        },
-        {
-          "name": "Submission-approved",
-          "color": "4ddd60"
-        }
-      ],
-      "repo": {
-        "name": "directory.btcpayserver.org",
-        "fullName": "btcpayserver/directory.btcpayserver.org",
-        "language": "TypeScript",
-        "url": "https://github.com/btcpayserver/directory.btcpayserver.org"
-      },
-      "assignees": [],
-      "author": {
-        "login": "learntheropes",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/5690126?v=4",
-        "url": "https://github.com/learntheropes"
-      }
-    },
     {
       "id": 4187170894,
       "number": 195,
@@ -351,8 +271,8 @@
       "body": "**Context:**\nAs mentioned in [Issue #3954](https://github.com/btcpayserver/btcpayserver/issues/3954), there is a need to standardize the Wallet view so that it offers feature parity with other views in BTCPay Server.\n\n<img width=\"2297\" height=\"262\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/2e36b1fd-c0ec-42dc-b64f-48f0eabf8ed3\" />\n\n\n**Request:**\nEnhance the Wallet transaction view to allow users to filter transactions by date in the same way as the Payment Requests and Invoices views. This would help users more easily locate relevant transactions and improve consistency across",
       "url": "https://github.com/btcpayserver/btcpayserver/issues/7092",
       "createdAt": "2026-01-10T11:16:33Z",
-      "updatedAt": "2026-03-25T18:23:28Z",
-      "commentsCount": 4,
+      "updatedAt": "2026-04-11T08:43:53Z",
+      "commentsCount": 6,
       "reactionCount": 0,
       "labels": [
         {
@@ -559,7 +479,7 @@
       "body": "## Summary\r\nAdds invoice‑style search and date filtering to the wallet transactions view, so users can quickly locate transactions by TXID or time range. The UI mirrors the invoice/payment request patterns and filters apply consistently to infinite scroll and exports.\r\n\r\n## Problem\r\nPer #7091 and #7092 (and #3954), wallet transactions lacked:\r\n- A search bar for transaction IDs (and related metadata)\r\n- Date filtering controls consistent with invoices/payment requests\r\n- Combined filter support when paging or exporting\r\n\r\nThis made it harder to locate specific transactions and created UX incon",
       "url": "https://github.com/btcpayserver/btcpayserver/pull/7133",
       "createdAt": "2026-01-23T05:57:10Z",
-      "updatedAt": "2026-04-10T05:59:40Z",
+      "updatedAt": "2026-04-11T04:54:58Z",
       "commentsCount": 21,
       "reactionCount": 0,
       "labels": [
