@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-13T19:05:42.197Z",
+  "lastUpdated": "2026-04-14T07:21:36.774Z",
   "totalIssues": 12,
   "repoCount": 5,
   "repos": [
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7504
+      "stars": 7505
     },
     {
       "id": 101657836,
@@ -335,8 +335,8 @@
       "body": "This page refers to a plugin not available anymore: https://docs.btcpayserver.org/Wabisabi\n\nAre there any plans to bring the plugin back or should this page better be removed?",
       "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1531",
       "createdAt": "2025-11-02T07:59:22Z",
-      "updatedAt": "2026-04-06T09:15:11Z",
-      "commentsCount": 3,
+      "updatedAt": "2026-04-13T20:58:59Z",
+      "commentsCount": 4,
       "reactionCount": 0,
       "labels": [
         {
@@ -509,7 +509,7 @@
       "body": "## Summary\r\nAdds invoice‑style search and date filtering to the wallet transactions view, so users can quickly locate transactions by TXID or time range. The UI mirrors the invoice/payment request patterns and filters apply consistently to infinite scroll and exports.\r\n\r\n## Problem\r\nPer #7091 and #7092 (and #3954), wallet transactions lacked:\r\n- A search bar for transaction IDs (and related metadata)\r\n- Date filtering controls consistent with invoices/payment requests\r\n- Combined filter support when paging or exporting\r\n\r\nThis made it harder to locate specific transactions and created UX incon",
       "url": "https://github.com/btcpayserver/btcpayserver/pull/7133",
       "createdAt": "2026-01-23T05:57:10Z",
-      "updatedAt": "2026-04-13T00:29:24Z",
+      "updatedAt": "2026-04-14T06:41:12Z",
       "commentsCount": 21,
       "reactionCount": 0,
       "labels": [
@@ -661,8 +661,8 @@
       "body": "This page refers to a plugin not available anymore: https://docs.btcpayserver.org/Wabisabi\n\nAre there any plans to bring the plugin back or should this page better be removed?",
       "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1531",
       "createdAt": "2025-11-02T07:59:22Z",
-      "updatedAt": "2026-04-06T09:15:11Z",
-      "commentsCount": 3,
+      "updatedAt": "2026-04-13T20:58:59Z",
+      "commentsCount": 4,
       "reactionCount": 0,
       "labels": [
         {
