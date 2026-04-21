@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-04-20T18:56:22.559Z",
-  "totalIssues": 12,
+  "lastUpdated": "2026-04-21T01:57:11.927Z",
+  "totalIssues": 13,
   "repoCount": 5,
   "repos": [
     {
@@ -69,6 +69,36 @@
     }
   ],
   "issues": [
+    {
+      "id": 4298394482,
+      "number": 208,
+      "type": "issue",
+      "title": "Review markup logo not visible on dark mode",
+      "body": "<img width=\"951\" height=\"407\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/ebf96aec-7828-4ae1-b02b-b776c80c1124\" />",
+      "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/208",
+      "createdAt": "2026-04-20T20:12:27Z",
+      "updatedAt": "2026-04-20T20:12:49Z",
+      "commentsCount": 0,
+      "reactionCount": 0,
+      "labels": [
+        {
+          "name": "good first issue",
+          "color": "7057ff"
+        }
+      ],
+      "repo": {
+        "name": "btcpayserver-plugin-builder",
+        "fullName": "btcpayserver/btcpayserver-plugin-builder",
+        "language": "C#",
+        "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder"
+      },
+      "assignees": [],
+      "author": {
+        "login": "TChukwuleta",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/47084273?v=4",
+        "url": "https://github.com/TChukwuleta"
+      }
+    },
     {
       "id": 4255870756,
       "number": 204,
@@ -471,36 +501,6 @@
     }
   ],
   "testerItems": [
-    {
-      "id": 4276422146,
-      "number": 7324,
-      "type": "pr",
-      "title": "Feature: Administrators can \"log as\" any user",
-      "body": "## Motivation\r\n\r\nImpersonation is a security feature that allows one user to sign in as another user.\r\n\r\nA limited form of this already exists:\r\n\r\n* Before 2.3.8, an administrator could impersonate a user by issuing a Login Code QR code from the Point of Sale update page. After the QR code is scanned, the device is redirected to a logged-in Point of Sale page and can access the store’s invoices.\r\n* When a user asks for assistance, an administrator can review that user’s store settings through Server `Server Settings -> Users`. However, this only provides a read-only view of the store, which li",
-      "url": "https://github.com/btcpayserver/btcpayserver/pull/7324",
-      "createdAt": "2026-04-16T14:32:45Z",
-      "updatedAt": "2026-04-19T14:16:00Z",
-      "commentsCount": 3,
-      "reactionCount": 0,
-      "labels": [
-        {
-          "name": "User Testing",
-          "color": "F8ADDA"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver",
-        "fullName": "btcpayserver/btcpayserver",
-        "language": "C#",
-        "url": "https://github.com/btcpayserver/btcpayserver"
-      },
-      "assignees": [],
-      "author": {
-        "login": "NicolasDorier",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/3020646?v=4",
-        "url": "https://github.com/NicolasDorier"
-      }
-    },
     {
       "id": 4187820905,
       "number": 7290,
