@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-22T19:04:12.668Z",
+  "lastUpdated": "2026-04-23T18:59:08.873Z",
   "totalIssues": 12,
   "repoCount": 5,
   "repos": [
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7524
+      "stars": 7525
     },
     {
       "id": 101657836,
@@ -545,7 +545,7 @@
       "body": "## Summary\r\nAdds invoice‑style search and date filtering to the wallet transactions view, so users can quickly locate transactions by TXID or time range. The UI mirrors the invoice/payment request patterns and filters apply consistently to infinite scroll and exports.\r\n\r\n## Problem\r\nPer #7091 and #7092 (and #3954), wallet transactions lacked:\r\n- A search bar for transaction IDs (and related metadata)\r\n- Date filtering controls consistent with invoices/payment requests\r\n- Combined filter support when paging or exporting\r\n\r\nThis made it harder to locate specific transactions and created UX incon",
       "url": "https://github.com/btcpayserver/btcpayserver/pull/7133",
       "createdAt": "2026-01-23T05:57:10Z",
-      "updatedAt": "2026-04-14T06:41:12Z",
+      "updatedAt": "2026-04-23T03:39:33Z",
       "commentsCount": 21,
       "reactionCount": 0,
       "labels": [
