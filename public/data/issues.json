@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28T19:24:08.805Z",
+  "lastUpdated": "2026-04-29T02:13:28.375Z",
   "totalIssues": 12,
   "repoCount": 5,
   "repos": [
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7534
+      "stars": 7535
     },
     {
       "id": 101657836,
@@ -77,8 +77,8 @@
       "body": "Currently, when a user searches the public plugin directory, listed and unlisted plugins appear visually identical in the results.\n\nExample scenario:\n\nA user searches for a plugin author in the public directory.\nThe results include both listed and unlisted plugins by that author.\nAll plugin entries look the same.\nThe user cannot tell which plugins are unlisted.\nExpected behavior:\n\nUnlisted plugins should have a clear visual indicator in the public directory UI, such as an Unlisted badge/flag next to the plugin name or status area.\n\nThis would make it clear to users that the plugin is available",
       "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/213",
       "createdAt": "2026-04-28T15:30:39Z",
-      "updatedAt": "2026-04-28T15:33:23Z",
-      "commentsCount": 0,
+      "updatedAt": "2026-04-28T23:26:00Z",
+      "commentsCount": 1,
       "reactionCount": 0,
       "labels": [
         {
@@ -96,7 +96,13 @@
         "language": "C#",
         "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder"
       },
-      "assignees": [],
+      "assignees": [
+        {
+          "login": "ak91456",
+          "avatarUrl": "https://avatars.githubusercontent.com/u/115034352?v=4",
+          "url": "https://github.com/ak91456"
+        }
+      ],
       "author": {
         "login": "thgO-O",
         "avatarUrl": "https://avatars.githubusercontent.com/u/107907441?v=4",
