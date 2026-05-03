@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-02T18:47:21.367Z",
+  "lastUpdated": "2026-05-03T02:10:10.021Z",
   "totalIssues": 13,
   "repoCount": 5,
   "repos": [
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7539
+      "stars": 7538
     },
     {
       "id": 101657836,
@@ -33,7 +33,7 @@
         "btcpayserver",
         "documentation"
       ],
-      "stars": 414
+      "stars": 415
     },
     {
       "id": 563141684,
