@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-05-03T18:49:25.747Z",
-  "totalIssues": 13,
+  "lastUpdated": "2026-05-04T02:08:53.563Z",
+  "totalIssues": 12,
   "repoCount": 5,
   "repos": [
     {
@@ -20,7 +20,7 @@
         "point-of-sale",
         "selfhosted"
       ],
-      "stars": 7541
+      "stars": 7542
     },
     {
       "id": 101657836,
@@ -69,40 +69,6 @@
     }
   ],
   "issues": [
-    {
-      "id": 4364640483,
-      "number": 218,
-      "type": "issue",
-      "title": "Plugin owner badge overflows in request listing with long email addresses",
-      "body": "## Description\n\nIn the request listing view, the `Plugin Owners` section can overflow horizontally when the owner email address is long.\n\nA long owner identifier can push the `Primary` badge outside the card boundary.\n\n<img width=\"1627\" height=\"967\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/dbe6842a-604c-46df-8271-8d121240afa3\" />",
-      "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/218",
-      "createdAt": "2026-05-01T13:35:35Z",
-      "updatedAt": "2026-05-01T13:35:58Z",
-      "commentsCount": 1,
-      "reactionCount": 1,
-      "labels": [
-        {
-          "name": "bug",
-          "color": "d73a4a"
-        },
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver-plugin-builder",
-        "fullName": "btcpayserver/btcpayserver-plugin-builder",
-        "language": "C#",
-        "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder"
-      },
-      "assignees": [],
-      "author": {
-        "login": "thgO-O",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/107907441?v=4",
-        "url": "https://github.com/thgO-O"
-      }
-    },
     {
       "id": 4351010741,
       "number": 215,
@@ -579,7 +545,7 @@
       "body": "## Summary\r\nAdds invoice‑style search and date filtering to the wallet transactions view, so users can quickly locate transactions by TXID or time range. The UI mirrors the invoice/payment request patterns and filters apply consistently to infinite scroll and exports.\r\n\r\n## Problem\r\nPer #7091 and #7092 (and #3954), wallet transactions lacked:\r\n- A search bar for transaction IDs (and related metadata)\r\n- Date filtering controls consistent with invoices/payment requests\r\n- Combined filter support when paging or exporting\r\n\r\nThis made it harder to locate specific transactions and created UX incon",
       "url": "https://github.com/btcpayserver/btcpayserver/pull/7133",
       "createdAt": "2026-01-23T05:57:10Z",
-      "updatedAt": "2026-04-28T00:45:04Z",
+      "updatedAt": "2026-05-03T22:37:56Z",
       "commentsCount": 21,
       "reactionCount": 0,
       "labels": [
