@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-05-04T19:19:15.503Z",
-  "totalIssues": 12,
+  "lastUpdated": "2026-05-05T02:08:02.877Z",
+  "totalIssues": 11,
   "repoCount": 5,
   "repos": [
     {
@@ -131,42 +131,6 @@
           "login": "ak91456",
           "avatarUrl": "https://avatars.githubusercontent.com/u/115034352?v=4",
           "url": "https://github.com/ak91456"
-        }
-      ],
-      "author": {
-        "login": "thgO-O",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/107907441?v=4",
-        "url": "https://github.com/thgO-O"
-      }
-    },
-    {
-      "id": 4255870756,
-      "number": 204,
-      "type": "issue",
-      "title": "API should perform pre-build identifier ownership validation",
-      "body": "### Summary\n\nThe build creation API should perform the same pre-build identifier ownership validation that already exists in the web UI.\n\n### Problem\n\nToday, the web UI validates the plugin identifier before queueing the build, but the API does not.\n\nAs a result, API clients can queue and run a full build even when the plugin manifest identifier does not belong to the target plugin slug. The error is only discovered later during build processing.\n",
-      "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder/issues/204",
-      "createdAt": "2026-04-13T15:00:49Z",
-      "updatedAt": "2026-04-28T17:18:22Z",
-      "commentsCount": 4,
-      "reactionCount": 1,
-      "labels": [
-        {
-          "name": "good first issue",
-          "color": "7057ff"
-        }
-      ],
-      "repo": {
-        "name": "btcpayserver-plugin-builder",
-        "fullName": "btcpayserver/btcpayserver-plugin-builder",
-        "language": "C#",
-        "url": "https://github.com/btcpayserver/btcpayserver-plugin-builder"
-      },
-      "assignees": [
-        {
-          "login": "makeentosch",
-          "avatarUrl": "https://avatars.githubusercontent.com/u/102906241?v=4",
-          "url": "https://github.com/makeentosch"
         }
       ],
       "author": {
