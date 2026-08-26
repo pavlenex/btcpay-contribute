@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-14T07:13:25.518Z",
+  "lastUpdated": "2026-08-26T06:35:13.346Z",
   "totalIssues": 17,
   "repoCount": 4,
   "repos": [
@@ -14,7 +14,7 @@
         "btcpayserver",
         "documentation"
       ],
-      "stars": 424
+      "stars": 425
     },
     {
       "id": 563141684,
@@ -492,8 +492,8 @@
       "body": "Our documentation at https://docs.btcpayserver.org/Walkthrough is slightly outdated.\n\nThe goal of that page is to walk users through each item in the sidebar in the order it appears, give a short explanation of what it does, and link to a dedicated page where they can learn more about that feature.\nHere’s the proposed approach for refactoring this page:\n\n1. Set up a local BTCPay Server instance if you do not already have access to a server with admin permissions. This is important because some sidebar features are only visible to admins. We should also highlight this in the documentation, sinc",
       "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1559",
       "createdAt": "2026-03-18T11:11:36Z",
-      "updatedAt": "2026-03-31T16:43:55Z",
-      "commentsCount": 2,
+      "updatedAt": "2026-08-21T21:31:54Z",
+      "commentsCount": 7,
       "reactionCount": 0,
       "labels": [
         {
@@ -1064,8 +1064,8 @@
       "body": "Our documentation at https://docs.btcpayserver.org/Walkthrough is slightly outdated.\n\nThe goal of that page is to walk users through each item in the sidebar in the order it appears, give a short explanation of what it does, and link to a dedicated page where they can learn more about that feature.\nHere’s the proposed approach for refactoring this page:\n\n1. Set up a local BTCPay Server instance if you do not already have access to a server with admin permissions. This is important because some sidebar features are only visible to admins. We should also highlight this in the documentation, sinc",
       "url": "https://github.com/btcpayserver/btcpayserver-doc/issues/1559",
       "createdAt": "2026-03-18T11:11:36Z",
-      "updatedAt": "2026-03-31T16:43:55Z",
-      "commentsCount": 2,
+      "updatedAt": "2026-08-21T21:31:54Z",
+      "commentsCount": 7,
       "reactionCount": 0,
       "labels": [
         {
